@@ -1,5 +1,7 @@
 # LEPUS 開発ガイドライン ![version](https://img.shields.io/badge/バージョン-1.0-blue)
 
+🇯🇵 **日本語** | 🇺🇸 [English](README.md)
+
 このリポジトリには、**レプスグループ エンジニアリングチームの開発ガイドラインとベストプラクティス** が含まれています。  
 コードレビュー、プルリクエスト、テスト、チームコラボレーションに関する原則を定義しています。
 
@@ -7,30 +9,32 @@
 
 ## 📖 利用可能なドキュメント
 
-- [レビューポリシー (日本語)](docs/ja/REVIEW_POLICY.md)
-  - [PR単位の原則](docs/ja/REVIEW_POLICY.md#pr単位の原則)
+- [レビューポリシー](docs/ja/REVIEW_POLICY.md)
+  - [PR 単位の原則](docs/ja/REVIEW_POLICY.md#pr単位の原則)
   - [レビューの心得](docs/ja/REVIEW_POLICY.md#-レビューの心得)
   - [簡易チェックリスト](docs/ja/REVIEW_POLICY.md#-簡易チェックリスト)
   - [レベル判定ガイド](docs/ja/REVIEW_POLICY.md#-レベル判定ガイド)
-  - [RACIマトリクス](docs/ja/REVIEW_POLICY.md#-raciマトリクス)
-- [Review Policy (English)](docs/en/REVIEW_POLICY.md)
-  - [PR Size Guidelines](docs/en/REVIEW_POLICY.md#pr-size-guidelines)
-  - [Review Mindset](docs/en/REVIEW_POLICY.md#-review-mindset)
-  - [Quick Checklist](docs/en/REVIEW_POLICY.md#-quick-checklist)
-  - [Level Decision Guide](docs/en/REVIEW_POLICY.md#-level-decision-guide)
-  - [RACI Matrix](docs/en/REVIEW_POLICY.md#-raci-matrix)
-- [プルリクエストテンプレート (日本語)](docs/ja/PULL_REQUEST_TEMPLATE.md)
+  - [RACI マトリクス](docs/ja/REVIEW_POLICY.md#-raciマトリクス)
+- [プルリクエストテンプレート](docs/ja/PULL_REQUEST_TEMPLATE.md)
   - [テスト証跡](docs/ja/PULL_REQUEST_TEMPLATE.md#-テスト証跡)
   - [チェックリスト](docs/ja/PULL_REQUEST_TEMPLATE.md#-チェックリスト)
-- [Pull Request Template (English)](docs/en/PULL_REQUEST_TEMPLATE.md)
-  - [Test Evidence](docs/en/PULL_REQUEST_TEMPLATE.md#-test-evidence)
-  - [Checklist](docs/en/PULL_REQUEST_TEMPLATE.md#-checklist)
+- [サードパーティパッケージ選定基準](docs/ja/DEPENDENCIES_GUIDELINES.md)
+  - [目的](docs/ja/DEPENDENCIES_GUIDELINES.md#目的)
+  - [信頼性](docs/ja/DEPENDENCIES_GUIDELINES.md#1-信頼性popularity--ecosystem-trust)
+  - [セキュリティ](docs/ja/DEPENDENCIES_GUIDELINES.md#2-セキュリティsecurity--compliance)
+  - [コード品質](docs/ja/DEPENDENCIES_GUIDELINES.md#3-コード品質code-quality)
+  - [プロジェクト継続性](docs/ja/DEPENDENCIES_GUIDELINES.md#4-プロジェクト継続性project-sustainability)
+  - [ライセンス](docs/ja/DEPENDENCIES_GUIDELINES.md#5-ライセンスlicense-compliance)
+  - [選定プロセス](docs/ja/DEPENDENCIES_GUIDELINES.md#6-選定プロセスevaluation-process)
+  - [継続的チェック](docs/ja/DEPENDENCIES_GUIDELINES.md#7-継続的チェックongoing-review)
+  - [例外ルール](docs/ja/DEPENDENCIES_GUIDELINES.md#8-例外ルールexception-rules)
 
 ---
 
 ## 🏗️ 対象範囲
 
 このガイドラインには以下が含まれます：
+
 - コードレビューの責務と原則
 - プルリクエストのテンプレートとワークフロー
 - テストと証跡に関する必須要件
@@ -41,10 +45,10 @@
 ## 🤝 貢献について
 
 改善提案はいつでも歓迎します。  
-ただし、**レプスグループ 外部からのプルリクエストは受け付けていません**。  
+ただし、**レプスグループ 外部からのプルリクエストは受け付けていません**。
 
 詳細は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。  
-社内メンバーは `main` ブランチに向けてプルリクエストを作成してください。  
+社内メンバーは `main` ブランチに向けてプルリクエストを作成してください。
 
 ---
 
