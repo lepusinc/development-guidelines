@@ -1,72 +1,72 @@
-## 📝 背景・目的
-<!-- このPRの背景や目的を簡潔に記載してください -->
-- チケット番号: [TICKET-1234](リンクを貼る)
-- 対応理由:
+## 📝 Background & Purpose
+<!-- Please describe the background and purpose of this PR concisely -->
+- Ticket Number: [TICKET-1234](paste link here)
+- Reason for this change:
 
 ---
 
-## 🔄 変更内容
-<!-- 主な変更点を箇条書きで -->
+## 🔄 Changes
+<!-- List the main changes in bullet points -->
 - 
 
 ---
 
-## ✅ 受け入れ基準 (Acceptance Criteria)
-<!-- チケットの受け入れ基準を転記・要約してください。以下は例です。不要な項目は削除してください -->
-- [ ] ○○できること
-- [ ] △△のケースでもエラーにならないこと
-- [ ] 境界値 (例: 0件/最大件数) でも動作すること
+## ✅ Acceptance Criteria
+<!-- Copy or summarize the acceptance criteria from the ticket. The following are examples. Remove unnecessary items. -->
+- [ ] Ability to do ○○
+- [ ] No errors even in △△ cases
+- [ ] Works with boundary values (e.g., 0 items / maximum items)
 
 ---
 
-## 📦 影響するパッケージ
-<!-- 影響するパッケージをすべて選択してください -->
+## 📦 Affected Packages
+<!-- Select all affected packages -->
 - 
 
 ---
 
-## 🧪 テスト証跡
-<!-- 以下のいずれか必須。最低1つ以上は必ず残す -->
-- [ ] 単体テスト追加 → 実行結果 (スクショ/CIリンク)
-- [ ] 統合/E2Eテスト追加 → 実行結果 (スクショ/CIリンク)
-- [ ] 手動確認のスクリーンショット or 動画
-- [ ] 再現手順を記載（レビュアーが追試可能な形）
+## 🧪 Test Evidence
+<!-- At least one of the following is required. Leave at least one. -->
+- [ ] Unit test added → Execution results (screenshot/CI link)
+- [ ] Integration/E2E test added → Execution results (screenshot/CI link)
+- [ ] Manual verification screenshot or video
+- [ ] Reproduction steps described (reviewers can reproduce)
 
 ---
 
-## 🖥️ 動作確認手順
-<!-- レビュアーが最低限確認できる手順を簡潔に -->
-1. ブランチをチェックアウト
-2. `make start` で環境起動
-3. `/xxx` にアクセスして ○○ を実行すると △△ が表示される
+## 🖥️ Verification Steps
+<!-- Provide concise steps that reviewers can minimally verify -->
+1. Check out the branch
+2. Start the environment with `make start`
+3. Access `/xxx` and execute ○○ to see △△ displayed
 
 ---
 
-## 📌 影響範囲
-<!-- 影響しうる範囲をすべて選択ないし記載してください -->
+## 📌 Impact Scope
+<!-- Select or describe all potentially affected areas -->
 - [ ] API
-- [ ] DBスキーマ
-- [ ] 認可/認証
+- [ ] DB Schema
+- [ ] Authorization/Authentication
 - [ ] UI/UX
-- [ ] 外部システム
+- [ ] External Systems
 
 ---
 
-## 📋 このPRの性質
-- [ ] バグ修正のみ（リファクタなし）
-- [ ] バグ修正 + **最小の機械的リファクタ**（別コミットに分離済み）
-- [ ] 準備リファクタ（振る舞い不変）※修正は別PRで実施
+## 📋 Nature of this PR
+- [ ] Bug fix only (no refactoring)
+- [ ] Bug fix + **minimal mechanical refactoring** (separated into different commits)
+- [ ] Preparatory refactoring (behavior unchanged) ※ Fix will be done in a separate PR
 
 ---
 
-## 🔍 チェックリスト
-- [ ] CIがグリーンである
-- [ ] 受け入れ基準を満たしている
-- [ ] テスト証跡が揃っている
-- [ ] セキュリティ/権限/パフォーマンス影響を考慮した
-- [ ] レビュアーに伝えるべき既知の制約・TODOを記載した
+## 🔍 Checklist
+- [ ] CI is green
+- [ ] Acceptance criteria are met
+- [ ] Test evidence is complete
+- [ ] Security/permissions/performance impact considered
+- [ ] Known constraints/TODOs that should be communicated to reviewers are documented
 
 ---
 
-> 🛈 詳細なレビュー基準については [REVIEW_POLICY.md](REVIEW_POLICY.md) を参照してください  
-> 📂 このテンプレートはプロジェクトの `.github` ディレクトリに配置してください。PRの作成時に自動で適用されます。
+> 🛈 For detailed review criteria, please refer to [REVIEW_POLICY.md](REVIEW_POLICY.md)  
+> 📂 This template should be placed in the `.github` directory of the project. It will be automatically applied when creating a PR.
