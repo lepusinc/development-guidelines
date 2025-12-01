@@ -1,0 +1,23 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS folder attributes
+._*
+
+# macOS Trash
+.Trashes
+
+# macOS Spotlight files
+.Spotlight-V100
+
+# macOS volume files
+.VolumeIcon.icns
+
+# macOS Finder files
+.fseventsd
+
+# VSCode settings and workspace files
+.vscode/
+*.code-workspace
