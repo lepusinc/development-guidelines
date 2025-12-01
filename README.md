@@ -42,6 +42,20 @@ These guidelines cover:
 
 ---
 
+## 📂 Directory Structure
+
+```
+.
+├── docs/
+│   ├── en/               # English documentation
+│   └── ja/               # Japanese documentation
+├── LICENSE               # Repository license
+├── README.md             # This file
+└── README.ja.md          # Japanese README
+```
+
+---
+
 ## 🤝 Contribution
 
 Suggestions for improvement are always welcome.  
