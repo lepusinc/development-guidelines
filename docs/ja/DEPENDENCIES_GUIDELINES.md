@@ -31,7 +31,7 @@
 
 ---
 
-# 2. セキュリリティ（Security & Compliance）
+# 2. セキュリティ（Security & Compliance）
 
 ## MUST（必須）
 
