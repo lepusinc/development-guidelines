@@ -10,7 +10,7 @@ This repository contains the engineering team's documentation standards, review 
 
 - **Internal use only**: PRs from outside Lepus Group are not accepted.
 - All content is for documentation, not code implementation.
-- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, PR templates in `docs/en/` and `docs/ja/`.
+- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, PR templates in `docs/en/` and `docs/ja/`.
 
 ### 2. Pull Request Workflow
 

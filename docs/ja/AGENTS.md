@@ -10,7 +10,7 @@
 
 - **内部使用のみ**：Lepus Group外部からのPRは受け付けられません。
 - すべてのコンテンツはドキュメンテーション用であり、コード実装用ではありません。
-- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/`および`docs/ja/`のPRテンプレート。
+- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`docs/en/`および`docs/ja/`のPRテンプレート。
 
 ### 2. プルリクエストのワークフロー
 

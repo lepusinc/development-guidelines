@@ -18,6 +18,7 @@
 - [プルリクエストテンプレート](docs/ja/PULL_REQUEST_TEMPLATE.md)
   - [テスト証跡](docs/ja/PULL_REQUEST_TEMPLATE.md#-テスト証跡)
   - [チェックリスト](docs/ja/PULL_REQUEST_TEMPLATE.md#-チェックリスト)
+- [課題テンプレート](docs/ja/ISSUE.md)
 - [サードパーティパッケージ選定基準](docs/ja/DEPENDENCIES_GUIDELINES.md)
   - [目的](docs/ja/DEPENDENCIES_GUIDELINES.md#目的)
   - [信頼性](docs/ja/DEPENDENCIES_GUIDELINES.md#1-信頼性popularity--ecosystem-trust)

@@ -18,6 +18,7 @@ It defines our principles for code review, pull requests, testing, and collabora
 - [Pull Request Template](docs/en/PULL_REQUEST_TEMPLATE.md)
   - [Test Evidence](docs/en/PULL_REQUEST_TEMPLATE.md#-test-evidence)
   - [Checklist](docs/en/PULL_REQUEST_TEMPLATE.md#-checklist)
+- [Issue Guidelines](docs/en/ISSUE.md)
 - [Third-Party Package Selection Guidelines](docs/en/DEPENDENCIES_GUIDELINES.md)
   - [Objectives](docs/en/DEPENDENCIES_GUIDELINES.md#objectives)
   - [Trustworthiness](docs/en/DEPENDENCIES_GUIDELINES.md#1-trustworthiness-popularity--ecosystem-trust)
