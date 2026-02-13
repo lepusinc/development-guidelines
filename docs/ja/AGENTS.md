@@ -10,18 +10,15 @@
 
 - **内部使用のみ**：Lepus Group外部からのPRは受け付けられません。
 - すべてのコンテンツはドキュメンテーション用であり、コード実装用ではありません。
-- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`docs/en/`および`docs/ja/`のPRテンプレート。
+- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`.github/PULL_REQUEST_TEMPLATE/`のPRテンプレート。
 
 ### 2. プルリクエストのワークフロー
 
 - 変更には**`main`からブランチを作成**します。
-- PRテンプレート（`docs/en/PULL_REQUEST_TEMPLATE.md`または`docs/ja/PULL_REQUEST_TEMPLATE.md`）を使用します。
-- PRには以下を含める必要があります：
-  - 背景/目的（チケットリンク、根拠）
-  - 主な変更点（箇条書き）
-  - 受け入れ基準（チェックリスト）
-  - 影響を受けるパッケージ/領域
-  - テストの証拠（スクリーンショット、CIの結果、再現手順）
+- PRテンプレート（`.github/PULL_REQUEST_TEMPLATE/feature.md`または`.github/PULL_REQUEST_TEMPLATE/feature_without_ticket.md`）を使用します。
+- チケットがある場合は `feature.md` を使用します（チケットURL + チケット基準のチェックリスト）。
+- チケットがない場合は `feature_without_ticket.md` を使用します（背景/目的、作業成果、動作確認手順、システム影響範囲、チェックリスト）。
+- 選択したテンプレートに合わせて、PRタイトル形式とチェックリストを満たしてください。
 - **外部からのPRは不可**—適応させたい場合はフォークしてください。
 
 ### 3. レビューポリシーのハイライト
@@ -30,9 +27,9 @@
   - L0：軽微な修正（簡単なチェック、CI/テストに重点）
   - L1：機能の追加/変更（ACと証拠が必要）
   - L2：高リスク（スキーマ/セキュリティ/外部統合）→ペアレビュー+手動検証
-- **必須**：受け入れ基準、テスト結果、および再現手順。
+- **必須**：選択したPRテンプレートで定義されている必須セクション/チェック項目。
 - **コミット規則**：`test:`、`fix:`、`refactor:`のプレフィックスを使用します。大規模な名前変更/フォーマット変更→別のPRで。
-- **明確な影響範囲**：影響を受ける領域（API/DB/認証/UI/外部システム）を常に記述します。
+- **システム影響範囲の明示**：`docs/en/ISSUE.md` / `docs/ja/ISSUE.md` に基づき、影響範囲を選択・記述します。
 
 ### 4. パターンと規約
 
@@ -44,6 +41,7 @@
 
 - すべてのドキュメントは英語（`docs/en/`）と日本語（`docs/ja/`）の両方で利用可能です。
 - PRとレビューには、適切な言語バージョンを参照してください。
+- 英語と日本語を併記する場合は、英語→日本語の順に記載してください。
 
 ## 例
 
