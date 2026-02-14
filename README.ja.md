@@ -1,4 +1,6 @@
-# LEPUS 開発ガイドライン ![version](https://img.shields.io/badge/バージョン-1.0-blue)
+# LEPUS 開発ガイドライン
+
+[![version](https://img.shields.io/github/v/release/lepusinc/development-guidelines?label=version)](https://github.com/lepusinc/development-guidelines/releases/latest) [![CI](https://github.com/lepusinc/development-guidelines/actions/workflows/ci.yml/badge.svg)](https://github.com/lepusinc/development-guidelines/actions/workflows/ci.yml)
 
 🇯🇵 **日本語** | 🇺🇸 [English](README.md)
 
