@@ -94,6 +94,7 @@
 - Ask questions when code intent is unclear (avoid assumptions)  
 - Highlight positives as well as issues  
 - Always explain reasons for requested changes logically  
+- When AI posts review comments, match the reviewee's language preference  
 
 ### 4. Attitude Toward Review
 - Authors should accept feedback with humility  
