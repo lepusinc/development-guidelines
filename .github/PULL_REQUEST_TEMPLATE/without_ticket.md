@@ -1,6 +1,20 @@
 <!-- If AI generates this PR content, include both Japanese and English. -->
+<!-- Use the reviewee's language for PR review comments. If unknown, write both Japanese and English. -->
+<!-- PRでのレビューコメントはレビュイーの言語でコメントする。言語が分からなければ、日本語と英語の併記でコメントする。 -->
+<!-- Write the PR body based on verified facts; do not fill unknowns with guesses. -->
+<!-- PR本文は確認済みの事実ベースで記載し、未確認事項を推測で埋めない。 -->
+<!-- Check only applicable checklist items; add a short reason for non-applicable items when needed. -->
+<!-- チェックリストは該当項目のみチェックし、必要に応じて非該当理由を簡潔に記載する。 -->
+<!-- For verification, prioritize reproducible evidence (commands, environment, links). -->
+<!-- 動作確認は再現可能な証跡（実行コマンド、環境、リンク）を優先して記載する。 -->
+<!-- Include both rationale and decision reason in 1-2 lines. -->
+<!-- 変更理由と判断理由を1-2行で明記する。 -->
+<!-- Explicitly state security/permission/data impact; write \"none\" when there is no impact. -->
+<!-- セキュリティ/権限/データ影響は明示し、影響がない場合も「なし」と記載する。 -->
+<!-- For review feedback responses, separate addressed items and intentionally unaddressed items with reasons. -->
+<!-- レビュー指摘への対応は、対応済みと未対応（理由付き）を分けて記載する。 -->
 
-# Future Pull Request (Without Ticket)
+# Pull Request (Without Ticket)
 
 ## 📝 Background & Purpose / 背景・目的
 
@@ -22,20 +36,36 @@ Description / 説明文
 
 ---
 
-## 🧪 Outputs / 作業成果
+## 🖥️ Verification / 動作確認
 
-> At least one of the following is required. Leave at least one.
+> Evidence of developer-led verification in the development environment.
 >
-> 以下のいずれか必須。最低1つ以上は必ず残す
+> 開発環境で開発者が行った動作確認。
 
+- [ ] Include screenshots or videos in the "Implementation Results" section  
+  「🧾 Implementation Results / 実装結果」セクションにスクリーンショット or 動画を記載
 - [ ] Unit test added → Execution results (screenshot/CI link)  
   単体テスト追加 → 実行結果 (スクショ/CIリンク)
 - [ ] Integration/E2E test added → Execution results (screenshot/CI link)  
   統合/E2Eテスト追加 → 実行結果 (スクショ/CIリンク)
-- [ ] Manual verification screenshot or video  
-  手動確認のスクリーンショット or 動画
-- [ ] Reproduction steps described (reviewers can reproduce)  
-  再現手順を記載（レビュアーが追試可能な形）
+- [ ] Log file snippets  
+  ログファイルの抜粋
+- [ ] API request & response samples  
+  APIリクエスト&レスポンスのサンプル
+- [ ] Database records (before & after)  
+  DBレコード(変更前後)
+- [ ] Performance metrics  
+  パフォーマンスメトリクス
+- [ ] REPL/Debugger output  
+  REPL/デバッガーの実行結果
+
+---
+
+## 🧾 Implementation Results / 実装結果
+
+> Summarize implementation outcomes for requesters and reviewers
+>
+> 依頼者・レビュアー向けに実装結果を簡潔に記載
 
 ---
 
@@ -83,13 +113,23 @@ Description / 説明文
 
 ## 📋 Nature of this PR / このPRの性質
 
+> Select all applicable categories
+>
+> 該当するカテゴリをすべて選択
+
 <!-- prettier-ignore -->
-- [ ] Bug fix only (no refactoring)  
-  バグ修正のみ（リファクタなし）
-- [ ] Bug fix + **minimal mechanical refactoring** (separated into different commits)  
-  バグ修正 + **最小の機械的リファクタ**（別コミットに分離済み）
-- [ ] Preparatory refactoring (behavior unchanged) ※ Fix will be done in a separate PR  
-  準備リファクタ（振る舞い不変）※修正は別PRで実施
+- [ ] Feature / Enhancement  
+  機能追加 / 改善
+- [ ] Bug Fix  
+  バグ修正
+- [ ] Refactoring (no behavior change)  
+  リファクタリング（振る舞い変更なし）
+- [ ] Performance / Reliability Improvement  
+  パフォーマンス / 信頼性改善
+- [ ] Test-only Change  
+  テストのみの変更
+- [ ] Build / Deployment / CI / Tooling / Dependency Update  
+  ビルド / デプロイ / CI / ツール / 依存関係の更新
 
 ---
 
@@ -98,8 +138,10 @@ Description / 説明文
 <!-- prettier-ignore -->
 - [ ] CI is green  
   CIがグリーンである
-- [ ] Outputs are documented  
-  作業成果を記載した
+- [ ] Verification by developer is documented  
+  開発者による動作確認を記載した
+- [ ] Implementation results are documented  
+  実装結果を記載した
 - [ ] Verification steps are documented  
   動作確認手順を記載した
 - [ ] System impact is selected  

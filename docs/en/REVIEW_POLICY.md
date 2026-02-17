@@ -44,9 +44,8 @@
    - When test coverage is insufficient, reviewers must compensate with AC/evidence checks.  
    - In the mid/long term, aim for continuous improvement of coverage starting with priority areas.  
 
-5. **Commit Conventions**  
-   - Use `test:` (repro/regression), `fix:` (bug fix), `refactor:` (behavior-preserving).  
-   - Large renames/formatting → dedicated or preparatory PRs.  
+5. **Commit Conventions (Reference)**  
+   - See [Git Workflow Guidelines](GIT_WORKFLOW.md#6-commit-messages) for commit message conventions.  
 
 6. **RACI (Responsibility Assignment) Clarification**  
    - Developer → Responsible for implementation & tests **(R)**  
