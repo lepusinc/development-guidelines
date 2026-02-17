@@ -15,9 +15,11 @@ This repository contains the engineering team's documentation standards, review 
 ### 2. Pull Request Workflow
 
 - **Branch from `main`** for changes.
-- Use the PR template (`.github/PULL_REQUEST_TEMPLATE/feature.md` or `.github/PULL_REQUEST_TEMPLATE/feature_without_ticket.md`).
-- Use `feature.md` when a ticket exists (ticket URL + ticket-driven checklist).
-- Use `feature_without_ticket.md` when no ticket exists (background/purpose, outputs, verification steps, system impact, checklist).
+- Use the PR template (`.github/PULL_REQUEST_TEMPLATE/with_ticket.md` or `.github/PULL_REQUEST_TEMPLATE/without_ticket.md`).
+- Use `with_ticket.md` when a ticket exists (ticket URL + ticket-driven checklist).
+- Use `without_ticket.md` when no ticket exists (background/purpose, outputs, verification steps, system impact, checklist).
+- Use `release_or_ops.md` for release/operational coordination changes (release merge, CI workflow changes, local dev setup updates, documentation updates).
+- Use `with_ticket.md` or `without_ticket.md` for production build/deploy changes.
 - Keep the PR title format and checklist aligned with the selected template.
 - **No external PRs**—fork if you wish to adapt.
 
