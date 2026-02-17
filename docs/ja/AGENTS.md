@@ -10,16 +10,12 @@
 
 - **内部使用のみ**：Lepus Group外部からのPRは受け付けられません。
 - すべてのコンテンツはドキュメンテーション用であり、コード実装用ではありません。
-- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`.github/PULL_REQUEST_TEMPLATE/`のPRテンプレート。
+- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`docs/en/GIT_WORKFLOW.md`、`docs/ja/GIT_WORKFLOW.md`、`.github/PULL_REQUEST_TEMPLATE/`のPRテンプレート。
 
 ### 2. プルリクエストのワークフロー
 
 - 変更には**`main`からブランチを作成**します。
-- PRテンプレート（`.github/PULL_REQUEST_TEMPLATE/with_ticket.md`または`.github/PULL_REQUEST_TEMPLATE/without_ticket.md`）を使用します。
-- チケットがある場合は `with_ticket.md` を使用します（チケットURL + チケット基準のチェックリスト）。
-- チケットがない場合は `without_ticket.md` を使用します（背景/目的、作業成果、動作確認手順、システム影響範囲、チェックリスト）。
-- リリース/運用調整を主目的とする変更（リリースマージ、CI変更、ローカル開発環境更新、ドキュメント更新）は `release_or_ops.md` を使用します。
-- 本番ビルド/デプロイ変更は `with_ticket.md` または `without_ticket.md` を使用します。
+- このリポジトリでは PRテンプレートとして `release_or_ops.md` を使用します（`.github/PULL_REQUEST_TEMPLATE/release_or_ops.md`）。
 - 選択したテンプレートに合わせて、PRタイトル形式とチェックリストを満たしてください。
 - **外部からのPRは不可**—適応させたい場合はフォークしてください。
 

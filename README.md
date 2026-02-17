@@ -22,6 +22,7 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Without ticket](.github/PULL_REQUEST_TEMPLATE/without_ticket.md)
   - [Release / Ops](.github/PULL_REQUEST_TEMPLATE/release_or_ops.md)
 - [Issue Guidelines](docs/en/ISSUE.md)
+- [Git Workflow Guidelines](docs/en/GIT_WORKFLOW.md)
 - [Third-Party Package Selection Guidelines](docs/en/DEPENDENCIES_GUIDELINES.md)
   - [Objectives](docs/en/DEPENDENCIES_GUIDELINES.md#objectives)
   - [Trustworthiness](docs/en/DEPENDENCIES_GUIDELINES.md#1-trustworthiness-popularity--ecosystem-trust)

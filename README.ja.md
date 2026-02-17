@@ -22,6 +22,7 @@
   - [チケットなし](.github/PULL_REQUEST_TEMPLATE/without_ticket.md)
   - [リリース / 運用](.github/PULL_REQUEST_TEMPLATE/release_or_ops.md)
 - [課題テンプレート](docs/ja/ISSUE.md)
+- [Gitワークフローガイドライン](docs/ja/GIT_WORKFLOW.md)
 - [サードパーティパッケージ選定基準](docs/ja/DEPENDENCIES_GUIDELINES.md)
   - [目的](docs/ja/DEPENDENCIES_GUIDELINES.md#目的)
   - [信頼性](docs/ja/DEPENDENCIES_GUIDELINES.md#1-信頼性popularity--ecosystem-trust)

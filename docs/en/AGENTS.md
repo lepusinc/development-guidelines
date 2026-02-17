@@ -10,16 +10,12 @@ This repository contains the engineering team's documentation standards, review 
 
 - **Internal use only**: PRs from outside Lepus Group are not accepted.
 - All content is for documentation, not code implementation.
-- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, PR templates in `.github/PULL_REQUEST_TEMPLATE/`.
+- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, `docs/en/GIT_WORKFLOW.md`, `docs/ja/GIT_WORKFLOW.md`, PR templates in `.github/PULL_REQUEST_TEMPLATE/`.
 
 ### 2. Pull Request Workflow
 
 - **Branch from `main`** for changes.
-- Use the PR template (`.github/PULL_REQUEST_TEMPLATE/with_ticket.md` or `.github/PULL_REQUEST_TEMPLATE/without_ticket.md`).
-- Use `with_ticket.md` when a ticket exists (ticket URL + ticket-driven checklist).
-- Use `without_ticket.md` when no ticket exists (background/purpose, outputs, verification steps, system impact, checklist).
-- Use `release_or_ops.md` for release/operational coordination changes (release merge, CI workflow changes, local dev setup updates, documentation updates).
-- Use `with_ticket.md` or `without_ticket.md` for production build/deploy changes.
+- Use `release_or_ops.md` as the PR template for this repository (`.github/PULL_REQUEST_TEMPLATE/release_or_ops.md`).
 - Keep the PR title format and checklist aligned with the selected template.
 - **No external PRs**—fork if you wish to adapt.
 
