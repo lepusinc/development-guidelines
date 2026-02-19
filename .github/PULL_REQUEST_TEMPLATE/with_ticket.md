@@ -13,6 +13,14 @@
 <!-- セキュリティ/権限/データ影響は明示し、影響がない場合も「なし」と記載する。 -->
 <!-- For review feedback responses, separate addressed items and intentionally unaddressed items with reasons. -->
 <!-- レビュー指摘への対応は、対応済みと未対応（理由付き）を分けて記載する。 -->
+<!-- Do not delete comment lines in this template. -->
+<!-- このテンプレートのコメント行は削除しない。 -->
+<!-- Do not modify or remove existing option texts. -->
+<!-- テンプレート内の既存選択肢テキストの変更および選択肢の削除はしない。 -->
+<!-- Toggle checklist states (on/off) as appropriate. -->
+<!-- チェックの on / off は適切に行う。 -->
+<!-- Adding options is allowed; append "（追加）" to added option text so additions are identifiable. -->
+<!-- 選択肢の追加は許可するが、追加したことが分かるよう選択肢のテキストに「（追加）」サフィックスを付与する。 -->
 
 # Pull Request (With Ticket)
 
