@@ -3,6 +3,9 @@
 ソフトウェア開発プロジェクトにおける課題（issue）は、目的に応じてタイプを使い分けます。
 このドキュメントでは、課題タイプの選び方とテンプレート参照先、Jira カスタム項目「システム影響範囲」の選択肢を定義します。
 
+課題テンプレートは lepusinc/.github で管理しています：
+<https://github.com/lepusinc/.github/tree/main/.github/ISSUE_TEMPLATE>
+
 ## 1. 課題タイプ
 
 ### エピック (Epic)
@@ -10,42 +13,42 @@
 エピックは、複数のストーリーを内包する大きな機能開発や改善を表す課題です。
 単一のスプリントやリリースで完了しないような、長期的な目標を管理するために使用します。
 
-[テンプレート](../issue_templates/epic.md)
+[テンプレート](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/epic.md)
 
 ### ストーリー (Story)
 
 ストーリーは、ユーザーにとって価値のある機能や要求を、ユーザーの視点から記述したものです。
 開発チームが1スプリントで完了できる程度の大きさで、具体的な受け入れ基準（完了条件）を持ちます。
 
-[テンプレート](../issue_templates/story.md)
+[テンプレート](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/story.md)
 
 ### タスク (Task)
 
 タスクは、ストーリーを技術的な観点から分解した具体的な作業項目です。
 「APIを実装する」「データベースのスキーマを変更する」など、開発者が実際に行う作業を記述します。
 
-[テンプレート](../issue_templates/task.md)
+[テンプレート](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/task.md)
 
 ### バグ (Bug)
 
 バグは、ソフトウェアの不具合や予期せぬ動作を報告するための課題です。
 再現手順、期待される結果、実際の結果などを明確に記述し、原因調査と修正を依頼します。
 
-[テンプレート](../issue_templates/bug.md)
+[テンプレート](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/bug.md)
 
 ### サブタスク (Sub-task)
 
 サブタスクは、ストーリーやタスクをさらに細分化した作業項目です。
 より詳細な進捗管理や、複数人での分業を容易にするために使用します。
 
-[テンプレート](../issue_templates/sub_task.md)
+[テンプレート](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/sub_task.md)
 
 ## 2. システム影響範囲
 
 Jira のカスタム項目「システム影響範囲」では、以下の汎用選択肢を使用します。該当する項目を選択してください。
 
 | No. | 項目 | 説明 |
-|---|---|---|
+| --- | --- | --- |
 | 1 | UI / UX | 画面構成・コンポーネント・文言・操作フローなど、ユーザーインターフェースや体験に変更があるか。 |
 | 2 | API | 既存APIのインターフェース（エンドポイント、パラメータ、レスポンス形式）や新規APIの追加・変更が発生するか。 |
 | 3 | External Systems | 他システムとの連携や外部サービス/APIとのインテグレーションに影響があるか。 |
