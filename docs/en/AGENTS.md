@@ -10,12 +10,12 @@ This repository contains the engineering team's documentation standards, review 
 
 - **Internal use only**: PRs from outside Lepus Group are not accepted.
 - All content is for documentation, not code implementation.
-- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, `docs/en/GIT_WORKFLOW.md`, `docs/ja/GIT_WORKFLOW.md`, PR templates in `.github/PULL_REQUEST_TEMPLATE/`.
+- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, `docs/en/GIT_WORKFLOW.md`, `docs/ja/GIT_WORKFLOW.md`, PR templates in lepusinc/.github: <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>.
 
 ### 2. Pull Request Workflow
 
 - **Branch from `main`** for changes.
-- Use `release_or_ops.md` as the PR template for this repository (`.github/PULL_REQUEST_TEMPLATE/release_or_ops.md`).
+- Use `release_or_ops.md` as the PR template for this repository (<https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>).
 - Keep the PR title format and checklist aligned with the selected template.
 - **No external PRs**—fork if you wish to adapt.
 

@@ -17,10 +17,6 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Quick Checklist](docs/en/REVIEW_POLICY.md#-quick-checklist)
   - [Level Decision Guide](docs/en/REVIEW_POLICY.md#-level-decision-guide)
   - [RACI Matrix](docs/en/REVIEW_POLICY.md#-raci-matrix)
-- [Pull Request Templates](.github/PULL_REQUEST_TEMPLATE/)
-  - [With ticket](.github/PULL_REQUEST_TEMPLATE/with_ticket.md)
-  - [Without ticket](.github/PULL_REQUEST_TEMPLATE/without_ticket.md)
-  - [Release / Ops](.github/PULL_REQUEST_TEMPLATE/release_or_ops.md)
 - [Issue Guidelines](docs/en/ISSUE.md)
 - [Git Workflow Guidelines](docs/en/GIT_WORKFLOW.md)
 - [Third-Party Package Selection Guidelines](docs/en/DEPENDENCIES_GUIDELINES.md)
@@ -33,6 +29,13 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Evaluation Process](docs/en/DEPENDENCIES_GUIDELINES.md#6-evaluation-process)
   - [Ongoing Review](docs/en/DEPENDENCIES_GUIDELINES.md#7-ongoing-review)
   - [Exception Rules](docs/en/DEPENDENCIES_GUIDELINES.md#8-exception-rules)
+
+Pull request templates are maintained in lepusinc/.github:
+
+- <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/with_ticket.md>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/without_ticket.md>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>
 
 ---
 

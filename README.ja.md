@@ -17,10 +17,6 @@
   - [簡易チェックリスト](docs/ja/REVIEW_POLICY.md#-簡易チェックリスト)
   - [レベル判定ガイド](docs/ja/REVIEW_POLICY.md#-レベル判定ガイド)
   - [RACI マトリクス](docs/ja/REVIEW_POLICY.md#-raciマトリクス)
-- [プルリクエストテンプレート](.github/PULL_REQUEST_TEMPLATE/)
-  - [チケットあり](.github/PULL_REQUEST_TEMPLATE/with_ticket.md)
-  - [チケットなし](.github/PULL_REQUEST_TEMPLATE/without_ticket.md)
-  - [リリース / 運用](.github/PULL_REQUEST_TEMPLATE/release_or_ops.md)
 - [課題テンプレート](docs/ja/ISSUE.md)
 - [Gitワークフローガイドライン](docs/ja/GIT_WORKFLOW.md)
 - [サードパーティパッケージ選定基準](docs/ja/DEPENDENCIES_GUIDELINES.md)
@@ -33,6 +29,13 @@
   - [選定プロセス](docs/ja/DEPENDENCIES_GUIDELINES.md#6-選定プロセスevaluation-process)
   - [継続的チェック](docs/ja/DEPENDENCIES_GUIDELINES.md#7-継続的チェックongoing-review)
   - [例外ルール](docs/ja/DEPENDENCIES_GUIDELINES.md#8-例外ルールexception-rules)
+
+プルリクエストテンプレートは lepusinc/.github で管理しています：
+
+- <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/with_ticket.md>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/without_ticket.md>
+- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>
 
 ---
 

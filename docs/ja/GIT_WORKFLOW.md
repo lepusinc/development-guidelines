@@ -39,9 +39,9 @@
 
 ## 4. PR運用
 
-- PR テンプレート（`.github/PULL_REQUEST_TEMPLATE/with_ticket.md` または `.github/PULL_REQUEST_TEMPLATE/without_ticket.md`）を使用します。
+- PR テンプレート（`with_ticket.md` または `without_ticket.md`）は <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE> を使用します。
 - チケットがある場合は `with_ticket.md`、ない場合は `without_ticket.md` を使用します。
-- リリース/運用調整を主目的とする変更（リリースマージ、CI 変更、ローカル開発環境更新、ドキュメント更新）は `release_or_ops.md` を使用します。
+- リリース/運用調整を主目的とする変更（リリースマージ、CI 変更、ローカル開発環境更新、ドキュメント更新）は `release_or_ops.md` を使用します（<https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>）。
 - 本番ビルド/デプロイ変更は `with_ticket.md` または `without_ticket.md` を使用します。
 - 選択したテンプレートに合わせて、PR タイトル形式とチェックリストを満たしてください。
 
