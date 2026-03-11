@@ -32,12 +32,9 @@ It defines our principles for code review, pull requests, testing, and collabora
 
 ### Pull request templates
 
-Pull request templates are maintained in lepusinc/.github:
+Pull request templates are maintained in lepusinc/.github to ensure consistency across all repositories.
 
 - <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/with_ticket.md>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/without_ticket.md>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>
 
 ### Framework-specific Guidelines
 

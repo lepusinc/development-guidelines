@@ -6,11 +6,11 @@ This document defines guidelines for creating migration files in Laravel applica
 
 - **[Mandatory]** Always implement `down()` that fully rolls back the changes made in `up()`. Write `down()` to be symmetric with `up()`.
 - **[Mandatory]** When dropping columns or tables, include the corresponding model and relation changes in the same PR.
-- **[Mandatory]** When adding a NOT NULL column to an existing table, include a `default` value or a data backfill process.
+- **[Mandatory]** When adding a NOT NULL column to an existing table, use staged migrations to avoid mixing DDL and DML: (1) add the column as nullable or with a `DEFAULT` value; (2) backfill existing rows in a separate step without mixing DDL — use a dedicated DML-only migration file for small datasets, or a Seeder/batch job for large datasets; (3) change the column to NOT NULL or drop the default in a final migration.
 - **[Mandatory]** Changes that affect backward compatibility, such as adding or removing `nullable()`, should be split into staged migrations considering the deployment order.
 - **[Mandatory]** Never edit a migration file that has already been executed in production. Create a new migration file if changes are needed.
 - **[Mandatory]** Set `default(false)` / `default(0)` on permission and status flag columns such as `is_admin` and `is_active`. Designing with no permissions by default prevents unintended privilege escalation.
-- **[Required]** Do not mix DDL (schema changes) and DML (inserts, updates, deletes) in migrations — separate data operations into Seeders.
+- **[Required]** Do not mix DDL (schema changes) and DML (inserts, updates, deletes) in the same migration file. For repeatable reference data, use Seeders. For one-time backfills tied to a schema change, a dedicated DML-only migration file is acceptable (see the NOT NULL column rule above).
 - **[Required]** Use `dateTime()` instead of `timestamp()` for date/time columns. `timestamp()` in MySQL causes UTC conversion issues and the year-2038 problem, while `dateTime()` is safely mapped to the appropriate type for each DB by Laravel's schema builder.
 
 ## 2. Performance
@@ -28,7 +28,7 @@ This document defines guidelines for creating migration files in Laravel applica
 - **[Mandatory]** Match the naming pattern of existing migration files.
 - **[Mandatory]** Follow the `YYYY_MM_DD_HHMMSS_<verb>_<table_name>_table.php` format for file names (e.g., `2024_01_15_093000_create_users_table.php`).
 - **[Mandatory]** Prefix with a verb that describes the action: `create_` / `add_` / `remove_` / `rename_` / `drop_`.
-- **[Conditional]** Name pivot tables in singular form, placing the table name of the entity that is the subject of the relationship (the more domain-specific, lower-abstraction entity) first (e.g., the pivot table for `payments` and `http_communications` is `payment_http_communication`).
+- **[Conditional]** Name pivot tables in singular form, placing the table name of the entity that is the subject of the relationship (the more domain-specific, lower-abstraction entity) first (e.g., the pivot table for `payments` and `http_communications` is `payment_http_communication`). Note that Laravel's `belongsToMany()` resolves pivot table names alphabetically by default; when following this domain-specific naming convention, explicitly pass the table name as the second argument (e.g., `belongsToMany(HttpCommunication::class, 'payment_http_communication')`).
 
 ## 5. Idempotency
 

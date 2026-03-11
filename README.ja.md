@@ -32,12 +32,9 @@
 
 ### プルリクエストテンプレート
 
-プルリクエストテンプレートは lepusinc/.github で管理しています：
+プルリクエストテンプレートは全リポジトリで共通化するため lepusinc/.github にて管理しています。
 
 - <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/with_ticket.md>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/without_ticket.md>
-- <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>
 
 ### フレームワーク別ガイドライン
 
