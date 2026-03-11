@@ -13,3 +13,4 @@
 
 - [マイグレーション](./MIGRATION.md) — マイグレーションファイルの命名規則
 - [例外ハンドリング / ロギング](./EXCEPTION_HANDLING.md) — 例外ハンドリングとロギングの基本方針
+- [Eloquent モデル](./ELOQUENT.md) — Eloquent モデルの設計・実装方針

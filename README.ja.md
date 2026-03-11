@@ -44,6 +44,7 @@
 - [Laravel ガイドライン](docs/ja/laravel/README.md)
   - [マイグレーション](docs/ja/laravel/MIGRATION.md)
   - [例外ハンドリング / ロギング](docs/ja/laravel/EXCEPTION_HANDLING.md)
+  - [Eloquent モデル](docs/ja/laravel/ELOQUENT.md)
 
 ---
 

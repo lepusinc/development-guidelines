@@ -7,3 +7,4 @@ Use these alongside the general guidelines. In case of conflict, these Laravel-s
 
 - [Migration](./MIGRATION.md)
 - [Exception Handling / Logging](./EXCEPTION_HANDLING.md)
+- [Eloquent Model](./ELOQUENT.md)
