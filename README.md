@@ -30,12 +30,19 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Ongoing Review](docs/en/DEPENDENCIES_GUIDELINES.md#7-ongoing-review)
   - [Exception Rules](docs/en/DEPENDENCIES_GUIDELINES.md#8-exception-rules)
 
+### Pull request templates
+
 Pull request templates are maintained in lepusinc/.github:
 
 - <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
 - <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/with_ticket.md>
 - <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/without_ticket.md>
 - <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>
+
+### Framework-specific Guidelines
+
+- [Laravel Guidelines](docs/en/laravel/README.md)
+  - [Migration](docs/en/laravel/MIGRATION.md)
 
 ---
 
@@ -52,7 +59,7 @@ These guidelines cover:
 
 ## 📂 Directory Structure
 
-```
+```text
 .
 ├── docs/
 │   ├── en/               # English documentation
