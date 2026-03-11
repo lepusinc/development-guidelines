@@ -6,3 +6,4 @@ Use these alongside the general guidelines. In case of conflict, these Laravel-s
 ## Documents
 
 - [Migration](./MIGRATION.md)
+- [Exception Handling / Logging](./EXCEPTION_HANDLING.md)

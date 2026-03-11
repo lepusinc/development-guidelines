@@ -12,3 +12,4 @@ If these guidelines conflict with the general guidelines (directly under `docs/e
 ## Documents
 
 - [Migration](./MIGRATION.md) — Naming conventions for migration files
+- [Exception Handling / Logging](./EXCEPTION_HANDLING.md) — Basic policy for exception handling and logging

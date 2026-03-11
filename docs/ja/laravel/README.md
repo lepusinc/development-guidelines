@@ -6,3 +6,4 @@
 ## ドキュメント一覧
 
 - [マイグレーション](./MIGRATION.md)
+- [例外ハンドリング / ロギング](./EXCEPTION_HANDLING.md)
