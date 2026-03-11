@@ -8,3 +8,4 @@
 - [マイグレーション](./MIGRATION.md)
 - [例外ハンドリング / ロギング](./EXCEPTION_HANDLING.md)
 - [Eloquent モデル](./ELOQUENT.md)
+- [ルーティング](./ROUTING.md)

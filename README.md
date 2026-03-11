@@ -45,6 +45,7 @@ Pull request templates are maintained in lepusinc/.github:
   - [Migration](docs/en/laravel/MIGRATION.md)
   - [Exception Handling / Logging](docs/en/laravel/EXCEPTION_HANDLING.md)
   - [Eloquent Model](docs/en/laravel/ELOQUENT.md)
+  - [Routing](docs/en/laravel/ROUTING.md)
 
 ---
 

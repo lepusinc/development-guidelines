@@ -45,6 +45,7 @@
   - [マイグレーション](docs/ja/laravel/MIGRATION.md)
   - [例外ハンドリング / ロギング](docs/ja/laravel/EXCEPTION_HANDLING.md)
   - [Eloquent モデル](docs/ja/laravel/ELOQUENT.md)
+  - [ルーティング](docs/ja/laravel/ROUTING.md)
 
 ---
 
