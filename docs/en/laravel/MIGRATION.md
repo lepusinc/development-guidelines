@@ -28,7 +28,7 @@ This document defines guidelines for creating migration files in Laravel applica
 - Match the naming pattern of existing migration files.
 - Follow the `YYYY_MM_DD_HHMMSS_<verb>_<table_name>_table.php` format for file names (e.g., `2024_01_15_093000_create_users_table.php`).
 - Prefix with a verb that describes the action: `create_` / `add_` / `remove_` / `rename_` / `drop_`.
-- Name pivot tables in singular form, placing the name of the more domain-specific (lower abstraction) entity first (e.g., the pivot table for `payments` and `http_communications` is `payment_http_communication`).
+- Name pivot tables in singular form, placing the table name of the entity that is the subject of the relationship (the more domain-specific, lower-abstraction entity) first (e.g., the pivot table for `payments` and `http_communications` is `payment_http_communication`).
 
 ## 5. Idempotency
 
