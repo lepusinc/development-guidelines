@@ -35,7 +35,18 @@ This repository contains the engineering team's documentation standards, review 
 - **RACI matrix**: Developer (implementation/tests), Reviewer/Tech Lead (quality/design/risk), QA/PM (AC definition/validation).
 - **Test-first for bug fixes**: Reproduction test → fix → regression check.
 
-### 5. Language & Documentation
+### 5. Rule Severity Labels
+
+Each rule in the guidelines is classified with one of the following severity labels.
+
+| Label | Description |
+| --- | --- |
+| **[Mandatory]** | No exceptions. Must be fixed within this PR. |
+| **[Required]** | Must fix. Can be deferred by creating a ticket (ticket URL or key must be specified). |
+| **[Conditional]** | Allowed with valid justification. |
+| **[Recommended]** | Not required, but improvement is desired. |
+
+### 6. Language & Documentation
 
 - All documentation is available in both English (`docs/en/`) and Japanese (`docs/ja/`).
 - Reference the appropriate language version for PRs and reviews.
