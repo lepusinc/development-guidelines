@@ -39,3 +39,44 @@ protected $levels = [
 - **[厳守]** HTTP レスポンスへの変換も `Handler` の `render()` または `renderable()` で一元管理する。
 - **[厳守]** スタックトレースや内部情報を本番環境のレスポンスに含めない。
 - **[要修正]** エラーレスポンスのフォーマット（構造・フィールド名）をアプリケーション全体で統一する。
+
+## イベントリスナーの例外ハンドリング
+
+- **[厳守]** イベントリスナー内で発生した例外は、リスナー自身の `handle()` メソッド内でキャッチ・処理する。呼び出し元（コントローラ・サービス）が `event()` を try/catch で囲んでリスナーの失敗を処理してはならない。
+- リスナーが `ShouldQueue` を実装している場合、リスナー内の例外は dispatch 元に伝播しないため、呼び出し元での try/catch はそもそも機能しない。キュー済みリスナーの例外ハンドリングは `failed()` メソッドで行う。
+
+```php
+// ✅ 正しい実装：リスナー自身が例外をハンドリングする
+class LogActionEventListener
+{
+    public function handle(UpdateFundEvent $event): void
+    {
+        try {
+            $this->addAction->addLoggableAction(...);
+        } catch (Throwable $e) {
+            report($e);
+            Log::error('Audit log failed', ['exception' => $e]);
+        }
+    }
+}
+
+// ✅ 正しい実装：キュー済みリスナーは failed() を使う
+class SendNotificationListener implements ShouldQueue
+{
+    public function handle(FundUpdated $event): void { ... }
+
+    public function failed(FundUpdated $event, Throwable $exception): void
+    {
+        report($exception);
+        Log::error('Notification job failed', ['exception' => $exception]);
+    }
+}
+
+// ❌ 誤った実装：呼び出し元がリスナーの例外を catch している
+try {
+    event(new UpdateFundEvent(...));
+} catch (Throwable $e) {
+    report($e);
+    Log::error('event dispatch failed', ['exception' => $e]);
+}
+```

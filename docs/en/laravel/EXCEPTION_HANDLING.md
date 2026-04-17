@@ -39,3 +39,44 @@ protected $levels = [
 - **[Mandatory]** Centralize HTTP response conversion in `Handler`'s `render()` or `renderable()`.
 - **[Mandatory]** Do not include stack traces or internal information in production responses.
 - **[Required]** Unify the error response format (structure and field names) across the entire application.
+
+## Event Listener Exception Handling
+
+- **[Mandatory]** Exceptions that occur inside an event listener must be caught and handled within the listener's own `handle()` method. Callers (controllers, services) must not wrap `event()` in try/catch to handle listener failures.
+- If a listener implements `ShouldQueue`, exceptions inside the listener do not propagate to the dispatch site at all, so try/catch in the caller is ineffective. Use the `failed()` method for exception handling in queued listeners.
+
+```php
+// ✅ Correct: listener handles its own exceptions
+class LogActionEventListener
+{
+    public function handle(UpdateFundEvent $event): void
+    {
+        try {
+            $this->addAction->addLoggableAction(...);
+        } catch (Throwable $e) {
+            report($e);
+            Log::error('Audit log failed', ['exception' => $e]);
+        }
+    }
+}
+
+// ✅ Correct: queued listener uses failed()
+class SendNotificationListener implements ShouldQueue
+{
+    public function handle(FundUpdated $event): void { ... }
+
+    public function failed(FundUpdated $event, Throwable $exception): void
+    {
+        report($exception);
+        Log::error('Notification job failed', ['exception' => $exception]);
+    }
+}
+
+// ❌ Incorrect: caller catches listener exceptions
+try {
+    event(new UpdateFundEvent(...));
+} catch (Throwable $e) {
+    report($e);
+    Log::error('event dispatch failed', ['exception' => $e]);
+}
+```
