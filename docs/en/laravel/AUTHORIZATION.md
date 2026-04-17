@@ -57,11 +57,13 @@ public function update(WriteRequest $request, Fund $fund): RedirectResponse
     @include('admin.fund.partials.edit-fund-contracts')
 @endcan
 
-@if (Gate::check('viewContracts', $fund) && Gate::denies('updateContracts', $fund))
-    <div class="bgc-white p-20 bd mB-20">
-        Contract PDF feature is disabled. You cannot upload contracts on this screen.
-    </div>
-@endif
+@can('viewContracts', $fund)
+    @cannot('updateContracts', $fund)
+        <div class="bgc-white p-20 bd mB-20">
+            Contract PDF feature is disabled. You cannot upload contracts on this screen.
+        </div>
+    @endcannot
+@endcan
 ```
 
 ```php
