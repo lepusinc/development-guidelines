@@ -69,7 +69,7 @@ try {
 
 ### Pattern 2: Service returns a Result type, controller branches with if (redirect to different page)
 
-When a redirect to a different page is needed based on success or failure, express the outcome as a Result type return value rather than an exception. The controller branches on this value.
+When a redirect to a different page is needed based on success or failure, express the outcome as a Result-type return value rather than an exception. The controller branches on this value.
 
 ```php
 // ✅ Permitted: service returns Result type, controller branches
