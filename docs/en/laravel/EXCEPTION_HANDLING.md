@@ -47,9 +47,23 @@ Only the following two patterns are permitted when handling exceptions in contro
 
 ### Pattern 1: Re-throw with a user-facing message (500 error page)
 
-Replace the low-level exception message with a user-safe message and re-throw as an exception implementing `UserFacingException`. The Handler identifies this interface and returns a 500 error page with the message. Always pass the original exception as `previous` to preserve the stack trace.
+Replace the low-level exception message with a user-safe message and re-throw as a user-facing exception. The Handler identifies this and returns a 500 error page with the message. Always pass the original exception as `previous` to preserve the stack trace.
 
-> **Prerequisite:** This pattern requires the `UserFacingException` interface and Handler configuration to be implemented.
+```php
+// ✅ Permitted: replace with user-facing message and re-throw
+try {
+    // ...
+} catch (Throwable $e) {
+    throw new XxxException(__('messages.alerts.try_again_later'), previous: $e);
+}
+
+// ❌ Prohibited: controller catches exception and controls redirect
+try {
+    // ...
+} catch (Exception $e) {
+    return redirect()->back()->with(['warning' => __('messages.alerts.try_again_later')]);
+}
+```
 
 ### Pattern 2: Service returns a Result type, controller branches with if (redirect to different page)
 

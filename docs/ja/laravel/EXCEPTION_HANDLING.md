@@ -47,9 +47,23 @@ protected $levels = [
 
 ### パターン 1: ユーザー向けメッセージに載せ替えて throw し直す（500 エラー画面表示）
 
-低レベルの例外をユーザーに見せられるメッセージに差し替え、`UserFacingException` を実装した例外として throw し直す。Handler が識別してメッセージ付き 500 画面を返す。元の例外は `previous` に渡してスタックトレースを保持する。
+低レベルの例外をユーザーに見せられるメッセージに差し替え、ユーザー向け例外として throw し直す。Handler が識別してメッセージ付き 500 画面を返す。元の例外は `previous` に渡してスタックトレースを保持する。
 
-> **前提:** このパターンは `UserFacingException` インターフェースと Handler の設定が実装済みであることが必要。
+```php
+// ✅ 許容：ユーザー向けメッセージに載せ替えて throw し直す
+try {
+    // ...
+} catch (Throwable $e) {
+    throw new XxxException(__('messages.alerts.try_again_later'), previous: $e);
+}
+
+// ❌ 禁止：コントローラで例外をキャッチしてリダイレクトを制御する
+try {
+    // ...
+} catch (Exception $e) {
+    return redirect()->back()->with(['warning' => __('messages.alerts.try_again_later')]);
+}
+```
 
 ### パターン 2: サービス層が Result 型を返し、コントローラが if 制御する（別画面へのリダイレクト）
 
