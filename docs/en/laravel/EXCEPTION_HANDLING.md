@@ -5,6 +5,7 @@ This document defines guidelines for exception handling and logging in Laravel a
 ## Basic Policy
 
 - **[Mandatory]** Centralize exception responses, command output, and logging in `app/Exceptions/Handler.php` (HTTP via `render()`, console via `renderForConsole()`, logging via `report()`). Do not catch exceptions within application code for the purpose of handling responses or logging.
+- **[Mandatory]** Never catch `Throwable` in application-layer code. `Throwable` includes `Error` classes (`TypeError`, `ParseError`, `OutOfMemoryError`, etc.) that represent unrecoverable programming or runtime failures; these must propagate to the global exception handler (`App\Exceptions\Handler`) for centralized logging and response control. Application-layer `try`/`catch` must target `Exception` or a more specific subclass only. (Receiving `Throwable` as a parameter — e.g., the `failed(Event $event, Throwable $exception)` signature defined by Laravel — is not catching and is fine.)
 - The following uses of exception catching are permitted:
   - Rolling back transactions
   - Closing files or resources
@@ -45,9 +46,9 @@ protected $levels = [
 
 Only the following two patterns are permitted when handling exceptions in controllers.
 
-### Pattern 1: Re-throw with a user-facing message (500 error page)
+### Pattern 1: Re-throw with a user-facing message
 
-Replace the low-level exception message with a user-safe message and re-throw as a user-facing exception. The Handler identifies this and returns a 500 error page with the message. Always pass the original exception as `previous` to preserve the stack trace.
+Replace the low-level exception message with a user-safe message and re-throw as a user-facing exception. The Handler identifies this exception type and renders a user-facing error response containing the message (the specific HTTP status code and view are Handler-side concerns). Always pass the original exception as `previous` to preserve the stack trace.
 
 ```php
 // ✅ Permitted: replace with user-facing message and re-throw
@@ -65,12 +66,12 @@ try {
 }
 ```
 
-### Pattern 2: Service returns a Result type, controller branches with if (redirect to different page)
+### Pattern 2: Service expresses outcome via return value, controller branches (redirect to different page)
 
-When a redirect to a different page is needed based on success or failure, express the outcome as a Result type return value rather than an exception. The controller branches on this value.
+When a redirect to a different page is needed based on success or failure, express the outcome as a return value rather than an exception, and have the controller branch on that value. The specific shape of the return value (a Result object, DTO, tuple, enum, `null` vs object, etc.) is an implementation detail — the point is that the outcome is carried as a value rather than thrown.
 
 ```php
-// ✅ Permitted: service returns Result type, controller branches
+// ✅ Permitted: service returns a value expressing the outcome; controller branches
 $result = $updateService->save($fund, $values);
 if ($result->failed()) {
     return redirect()->route('admin.fund.other', $fund->id)
@@ -88,41 +89,71 @@ try {
 
 ## Event Listener Exception Handling
 
-- **[Mandatory]** Exceptions that occur inside an event listener must be caught and handled within the listener's own `handle()` method. Callers (controllers, services) must not wrap `event()` in try/catch to handle listener failures.
-- If a listener implements `ShouldQueue`, exceptions inside the listener do not propagate to the dispatch site at all, so try/catch in the caller is ineffective. Use the `failed()` method for exception handling in queued listeners.
+Laravel's official documentation explicitly prescribes only one pattern (`failed()` for `ShouldQueue` listeners); the rest is a design principle this project adopts: the caller of `event()` should not be aware of whether a listener is synchronous or queued. That is the listener's implementation detail and may change over time (e.g., adding `ShouldQueue` to an existing listener). Listener error handling therefore belongs on the listener side.
+
+- **[Mandatory]** For queued listeners (`ShouldQueue`), let exceptions propagate out of `handle()`. Handle post-retry cleanup via the `InteractsWithQueue` trait and a `failed(Event $event, Throwable $exception)` method.
+
+  Why: Laravel's queue retry mechanism (`$tries`, `backoff`, `retryUntil`) and the `failed()` callback only run if the exception propagates out of `handle()`. Wrapping `handle()` in try/catch disables both. See [Laravel Events — Handling Failed Jobs](https://laravel.com/docs/12.x/events#handling-failed-jobs).
+
+- **[Recommended]** Do not wrap `event()` in try/catch at the dispatch site. Handle failures on the listener side.
+
+  Why: exceptions propagate back to the dispatch site only for synchronous listeners, so the try/catch runs only while every listener is synchronous. The moment any listener adds `implements ShouldQueue`, the catch silently stops being invoked. This means the try/catch implicitly depends on the listener's execution mode (sync vs queued), which is an implementation detail. Laravel's official docs do not prescribe this — it is a design principle of this project.
+
+- **[Recommended]** For synchronous listeners, if the listener is a side-effect whose failure must not break the main flow (e.g., audit logging), catch inside `handle()` and `report()` the exception. If the listener's success is critical to the main flow, move the logic into the caller or a dedicated service.
+
+  Why: Laravel does not prescribe a pattern for synchronous listener exceptions — it is a design judgment. Listeners are intended for loosely coupled side-effects; logic whose success the main flow depends on does not belong in a listener.
 
 ```php
-// ✅ Correct: listener handles its own exceptions
+// ✅ Correct: synchronous side-effect listener — catch inside handle() to protect the main flow
 class LogActionEventListener
 {
     public function handle(UpdateFundEvent $event): void
     {
         try {
             $this->addAction->addLoggableAction(...);
-        } catch (Throwable $e) {
+        } catch (Exception $e) {
             report($e);
-            Log::error('Audit log failed', ['exception' => $e]);
         }
     }
 }
 
-// ✅ Correct: queued listener uses failed()
+// ✅ Correct: queued listener — let exceptions propagate; clean up in failed()
 class SendNotificationListener implements ShouldQueue
 {
-    public function handle(FundUpdated $event): void { ... }
+    use InteractsWithQueue;
+
+    public function handle(FundUpdated $event): void
+    {
+        // No try/catch — let exceptions propagate so the queue can retry.
+        $this->notifier->send(...);
+    }
 
     public function failed(FundUpdated $event, Throwable $exception): void
     {
         report($exception);
-        Log::error('Notification job failed', ['exception' => $exception]);
     }
 }
 
-// ❌ Incorrect: caller catches listener exceptions
+// ❌ Prohibited: queued listener wraps handle() in try/catch
+class SendNotificationListener implements ShouldQueue
+{
+    public function handle(FundUpdated $event): void
+    {
+        try {
+            $this->notifier->send(...);
+        } catch (Throwable $e) {
+            report($e); // Queue cannot retry; failed() is never called.
+        }
+    }
+}
+
+// ❌ Discouraged: caller wraps event() in try/catch
+// Works only while the listener is synchronous. If the listener later adds
+// `implements ShouldQueue`, this catch silently stops running — the caller
+// becomes coupled to an implementation detail of the listener.
 try {
     event(new UpdateFundEvent(...));
 } catch (Throwable $e) {
     report($e);
-    Log::error('event dispatch failed', ['exception' => $e]);
 }
 ```
