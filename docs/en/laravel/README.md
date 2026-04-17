@@ -9,3 +9,4 @@ Use these alongside the general guidelines. In case of conflict, these Laravel-s
 - [Exception Handling / Logging](./EXCEPTION_HANDLING.md)
 - [Eloquent Model](./ELOQUENT.md)
 - [Routing](./ROUTING.md)
+- [Authorization](./AUTHORIZATION.md)

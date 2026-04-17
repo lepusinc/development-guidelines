@@ -9,3 +9,4 @@
 - [例外ハンドリング / ロギング](./EXCEPTION_HANDLING.md)
 - [Eloquent モデル](./ELOQUENT.md)
 - [ルーティング](./ROUTING.md)
+- [認可](./AUTHORIZATION.md)
