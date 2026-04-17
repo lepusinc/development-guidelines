@@ -53,7 +53,7 @@ protected $levels = [
 // ✅ 許容：ユーザー向けメッセージに載せ替えて throw し直す
 try {
     // ...
-} catch (Throwable $e) {
+} catch (Exception $e) {
     throw new XxxException(__('messages.alerts.try_again_later'), previous: $e);
 }
 

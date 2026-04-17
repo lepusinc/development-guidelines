@@ -53,7 +53,7 @@ Replace the low-level exception message with a user-safe message and re-throw as
 // ✅ Permitted: replace with user-facing message and re-throw
 try {
     // ...
-} catch (Throwable $e) {
+} catch (Exception $e) {
     throw new XxxException(__('messages.alerts.try_again_later'), previous: $e);
 }
 
