@@ -49,22 +49,6 @@ Only the following two patterns are permitted when handling exceptions in contro
 
 Replace the low-level exception message with a user-safe message and re-throw as an exception implementing `UserFacingException`. The Handler identifies this interface and returns a 500 error page with the message. Always pass the original exception as `previous` to preserve the stack trace.
 
-```php
-// ✅ Permitted: replace with user-facing message and re-throw
-try {
-    DB::transaction(fn() => $updateService->save($fund, $values));
-} catch (Throwable $e) {
-    throw new FundOperationException(__('messages.alerts.try_again_later'), previous: $e);
-}
-
-// ❌ Prohibited: controller catches exception and controls redirect
-try {
-    DB::transaction(fn() => $updateService->save($fund, $values));
-} catch (Exception $e) {
-    return redirect()->back()->with(['warning' => __('messages.alerts.try_again_later')]);
-}
-```
-
 > **Prerequisite:** This pattern requires the `UserFacingException` interface and Handler configuration to be implemented.
 
 ### Pattern 2: Service returns a Result type, controller branches with if (redirect to different page)
