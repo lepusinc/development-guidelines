@@ -18,6 +18,7 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Level Decision Guide](docs/en/REVIEW_POLICY.md#-level-decision-guide)
   - [RACI Matrix](docs/en/REVIEW_POLICY.md#-raci-matrix)
 - [Issue Guidelines](docs/en/ISSUE.md)
+- [Pull Request Guidelines](docs/en/PULL_REQUEST.md)
 - [Git Workflow Guidelines](docs/en/GIT_WORKFLOW.md)
 - [Third-Party Package Selection Guidelines](docs/en/DEPENDENCIES_GUIDELINES.md)
   - [Objectives](docs/en/DEPENDENCIES_GUIDELINES.md#objectives)

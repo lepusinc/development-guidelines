@@ -10,7 +10,7 @@
 
 - **内部使用のみ**：Lepus Group外部からのPRは受け付けられません。
 - すべてのコンテンツはドキュメンテーション用であり、コード実装用ではありません。
-- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`docs/en/GIT_WORKFLOW.md`、`docs/ja/GIT_WORKFLOW.md`、lepusinc/.github の PRテンプレート（<https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>）。
+- 主要ファイル：`README.md`、`README.ja.md`、`CONTRIBUTING.md`、`docs/en/REVIEW_POLICY.md`、`docs/ja/REVIEW_POLICY.md`、`docs/en/ISSUE.md`、`docs/ja/ISSUE.md`、`docs/en/PULL_REQUEST.md`、`docs/ja/PULL_REQUEST.md`、`docs/en/GIT_WORKFLOW.md`、`docs/ja/GIT_WORKFLOW.md`、lepusinc/.github の PRテンプレート（<https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>）。
 
 ### 2. プルリクエストのワークフロー
 
