@@ -10,7 +10,7 @@ This repository contains the engineering team's documentation standards, review 
 
 - **Internal use only**: PRs from outside Lepus Group are not accepted.
 - All content is for documentation, not code implementation.
-- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, `docs/en/GIT_WORKFLOW.md`, `docs/ja/GIT_WORKFLOW.md`, PR templates in lepusinc/.github: <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>.
+- Main files: `README.md`, `README.ja.md`, `CONTRIBUTING.md`, `docs/en/REVIEW_POLICY.md`, `docs/ja/REVIEW_POLICY.md`, `docs/en/ISSUE.md`, `docs/ja/ISSUE.md`, `docs/en/PULL_REQUEST.md`, `docs/ja/PULL_REQUEST.md`, `docs/en/GIT_WORKFLOW.md`, `docs/ja/GIT_WORKFLOW.md`, PR templates in lepusinc/.github: <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>.
 
 ### 2. Pull Request Workflow
 

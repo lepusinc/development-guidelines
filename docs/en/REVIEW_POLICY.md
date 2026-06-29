@@ -65,6 +65,26 @@
 
 ---
 
+## 🏷️ Review Comment Severity & Handling
+
+Review comments (primarily from CodeRabbit) are triaged by CodeRabbit's **severity** labels. This axis indicates the urgency of an individual finding, and is distinct from two other axes:
+
+- **Review Levels (L0/L1/L2)** above — classify the *PR's* overall risk.
+- **Guideline severity labels** (`[Mandatory]` / `[Required]` / `[Conditional]` / `[Recommended]`, defined in [AGENTS.md](AGENTS.md)) — classify how strictly a *guideline rule* must be followed.
+
+Handle findings by CodeRabbit severity as follows:
+
+| CodeRabbit Severity | Handling in this PR | Follow-up issue | Guideline label (≈) |
+| --- | --- | --- | --- |
+| Critical | Must fix (blocker) | Not allowed | `[Mandatory]` |
+| Major | Fix as a rule; defer only with a ticket | As a rule not allowed | `[Required]` |
+| Minor | Fix now, or create a follow-up issue | Allowed | `[Conditional]` / `[Recommended]` |
+| Trivial / Nitpick | Optional | Allowed (or won't-fix) | `[Recommended]` |
+
+For deferring Minor-or-below comments via a follow-up issue (including the required issue links), see the Dev Playbook "Jira 課題運用ガイド" (§7 フォローアップ課題): <https://lepus.atlassian.net/wiki/spaces/DEVPB/pages/41615364/Jira>.
+
+---
+
 ## ✅ Quick Checklist
 
 - [ ] PR includes AC and test evidence  

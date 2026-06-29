@@ -39,11 +39,7 @@ If a repository has its own defined Git workflow or branch operation guidelines,
 
 ## 4. PR Operations
 
-- Use a PR template (`with_ticket.md` or `without_ticket.md`) from <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>.
-- Use `with_ticket.md` when a ticket exists, and `without_ticket.md` when no ticket exists.
-- Use `release_or_ops.md` for release/operational coordination changes (release merge, CI workflow changes, local dev setup updates, documentation updates). Template: <https://github.com/lepusinc/.github/blob/main/.github/PULL_REQUEST_TEMPLATE/release_or_ops.md>.
-- Use `with_ticket.md` or `without_ticket.md` for production build/deploy changes.
-- Keep the PR title format and checklist aligned with the selected template.
+PR template selection and PR title/checklist rules are defined in [Pull Requests](./PULL_REQUEST.md).
 
 ## 5. Branch Naming
 

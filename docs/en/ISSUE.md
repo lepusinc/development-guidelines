@@ -1,49 +1,13 @@
 # Issues
 
-In software development projects, issues are classified and used by purpose.
-This document defines issue types, template references, and the Jira custom field "System Impact Scope."
+This document defines the Jira custom field "System Impact Scope."
 
-Issue templates are maintained in lepusinc/.github:
-<https://github.com/lepusinc/.github/tree/main/.github/ISSUE_TEMPLATE>
+For issue type **definitions and selection criteria** — what Epic / Story / Task / Bug / Sub-task mean and when to use each, plus the purpose, workflow usage, approval flow, and decision-recording policy for Jira issues — see the "Jira 課題運用ガイド" page in the Dev Playbook (Confluence), which is the source of truth for that context:
+<https://lepus.atlassian.net/wiki/spaces/DEVPB/pages/41615364/Jira>
 
-## 1. Issue Types
+For issue and PR **templates** (which template to use per type), see [Pull Requests](./PULL_REQUEST.md).
 
-### Epic
-
-An Epic is a large-scale feature development or improvement that encompasses multiple stories.
-It is used to manage long-term goals that may not be completed in a single sprint or release.
-
-[Template](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/epic.md)
-
-### Story
-
-A Story describes a valuable feature or requirement from the user's perspective.
-It is small enough for a development team to complete in one sprint and has specific acceptance criteria (conditions for completion).
-
-[Template](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/story.md)
-
-### Task
-
-A Task is a specific work item broken down from a story from a technical point of view.
-It describes the actual work that developers do, such as "implement an API" or "change the database schema."
-
-[Template](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/task.md)
-
-### Bug
-
-A Bug is an issue for reporting software defects or unexpected behavior.
-It clearly describes the steps to reproduce, the expected result, and the actual result, and requests investigation and correction.
-
-[Template](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/bug.md)
-
-### Sub-task
-
-A Sub-task is a work item further subdivided from a story or task.
-It is used for more detailed progress management and to facilitate division of labor among multiple people.
-
-[Template](https://github.com/lepusinc/.github/blob/main/.github/ISSUE_TEMPLATE/sub_task.md)
-
-## 2. System Impact Scope
+## 1. System Impact Scope
 
 For the Jira custom field "System Impact Scope," use the following common options and select all applicable items.
 
