@@ -77,7 +77,7 @@ Handle findings by CodeRabbit severity as follows:
 | CodeRabbit Severity | Handling in this PR | Follow-up issue | Guideline label (≈) |
 | --- | --- | --- | --- |
 | Critical | Must fix (blocker) | Not allowed | `[Mandatory]` |
-| Major | Fix as a rule; defer only with a ticket | As a rule not allowed | `[Required]` |
+| Major | Fix as a rule; defer only with a ticket | Allowed (ticket required) | `[Required]` |
 | Minor | Fix now, or create a follow-up issue | Allowed | `[Conditional]` / `[Recommended]` |
 | Trivial / Nitpick | Optional | Allowed (or won't-fix) | `[Recommended]` |
 

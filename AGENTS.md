@@ -26,7 +26,7 @@ When writing bilingual text inline, list English first, then Japanese.
 
 Each directory level has its own `AGENTS.md` that scopes the rules below it:
 
-- Root `AGENTS.md` → language switcher only.
+- Root `AGENTS.md` → repository-wide agent instructions (repo purpose, bilingual rule, conventions, CI) plus language switcher links to the trees below.
 - `docs/en/AGENTS.md` (and `ja`) → repository-wide agent conventions: review levels, severity labels, PR workflow.
 - `docs/en/laravel/AGENTS.md` (and `ja`) → **Laravel-specific rules that take precedence over the general `docs/en/` rules when the target project uses Laravel.** Ignore the `laravel/` directory entirely for non-Laravel projects.
 
