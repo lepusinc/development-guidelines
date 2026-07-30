@@ -15,3 +15,5 @@
 - [例外ハンドリング / ロギング](./EXCEPTION_HANDLING.md) — 例外ハンドリングとロギングの基本方針
 - [Eloquent モデル](./ELOQUENT.md) — Eloquent モデルの設計・実装方針
 - [ルーティング](./ROUTING.md) — ルーティングの命名規則・設計・セキュリティ方針
+- [リポジトリ](./REPOSITORY.md) — リポジトリ層の設計方針
+- [サービス](./SERVICE.md) — サービス層の設計方針

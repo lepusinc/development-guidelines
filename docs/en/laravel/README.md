@@ -10,3 +10,5 @@ Use these alongside the general guidelines. In case of conflict, these Laravel-s
 - [Eloquent Model](./ELOQUENT.md)
 - [Routing](./ROUTING.md)
 - [Authorization](./AUTHORIZATION.md)
+- [Repository](./REPOSITORY.md)
+- [Service](./SERVICE.md)

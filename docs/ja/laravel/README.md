@@ -10,3 +10,5 @@
 - [Eloquent モデル](./ELOQUENT.md)
 - [ルーティング](./ROUTING.md)
 - [認可](./AUTHORIZATION.md)
+- [リポジトリ](./REPOSITORY.md)
+- [サービス](./SERVICE.md)
