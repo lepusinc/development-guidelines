@@ -4,7 +4,7 @@ This document defines guidelines for designing the service layer in Laravel appl
 
 ## Fetching Query Results
 
-- **[Mandatory]** Whether to use `->get()` (fetch all) or `->paginate()` (fetch paginated) is decided by the caller (e.g., the controller). Do not provide separate "paginated" and "non-paginated" methods in the repository/service layer. This rule applies equally to the [Repository](./REPOSITORY.md) layer.
+- **[Mandatory]** Whether to use `->get()` (fetch all) or `->paginate()` (fetch paginated) is decided by the caller (e.g., the controller). Do not provide separate "paginated" and "non-paginated" methods in the repository/service layer; instead, expose a single query-building method that returns a `Builder` (not a materialized `Collection` or `LengthAwarePaginator`), and let the caller call `->get()` or `->paginate()` on it. This rule applies equally to the [Repository](./REPOSITORY.md) layer.
 
 ```php
 // ❌ Wrong: duplicating a get() version and a paginate() version as separate methods
