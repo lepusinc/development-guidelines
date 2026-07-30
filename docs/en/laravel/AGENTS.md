@@ -15,3 +15,5 @@ If these guidelines conflict with the general guidelines (directly under `docs/e
 - [Exception Handling / Logging](./EXCEPTION_HANDLING.md) — Basic policy for exception handling and logging
 - [Eloquent Model](./ELOQUENT.md) — Design and implementation guidelines for Eloquent models
 - [Routing](./ROUTING.md) — Naming conventions, design, and security guidelines for routing
+- [Repository](./REPOSITORY.md) — Design guidelines for the repository layer
+- [Service](./SERVICE.md) — Design guidelines for the service layer
