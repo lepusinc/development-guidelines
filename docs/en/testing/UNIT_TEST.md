@@ -4,8 +4,8 @@
 
 - Targets the smallest units of logic — functions, methods, classes, etc.
 - Purpose: verify logic branches, boundary values, and error paths quickly and exhaustively.
-- Minimize dependencies on out-of-process resources (DB, HTTP, external APIs). Replace unavoidable dependencies with mocks or stubs.
-- Because unit tests run fast and cheaply verify large numbers of input combinations, branch and pattern coverage is unit tests' responsibility.
+- **[Recommended]** Minimize dependencies on out-of-process resources (DB, HTTP, external APIs). Replace unavoidable dependencies with mocks or stubs.
+- **[Required]** Because unit tests run fast and cheaply verify large numbers of input combinations, branch and pattern coverage is unit tests' responsibility.
 
 ## Topic Guidelines
 
