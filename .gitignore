@@ -21,3 +21,6 @@
 # VSCode settings and workspace files
 .vscode/
 *.code-workspace
+
+# JetBrains IDE settings
+.idea/
