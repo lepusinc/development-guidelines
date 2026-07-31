@@ -18,7 +18,7 @@ This document is available in the following languages:
 - [English](docs/en/AGENTS.md)
 - [Japanese](docs/ja/AGENTS.md)
 
-When you add or change a guideline, **keep `docs/en/` and `docs/ja/` in sync** — a change to one almost always needs the matching change in the other. Note the trees are not yet symmetric: `docs/ja/` currently has testing docs (`TESTING_GUIDELINES.md`, `UNIT_TEST_GUIDELINES.md`, `FUTURE_TEST_GUIDELINES.md`) that have no English counterpart. Check both sides before assuming a file exists.
+When you add or change a guideline, **keep `docs/en/` and `docs/ja/` in sync** — a change to one almost always needs the matching change in the other.
 
 When writing bilingual text inline, list English first, then Japanese.
 
@@ -29,6 +29,7 @@ Each directory level has its own `AGENTS.md` that scopes the rules below it:
 - Root `AGENTS.md` → repository-wide agent instructions (repo purpose, bilingual rule, conventions, CI) plus language switcher links to the trees below.
 - `docs/en/AGENTS.md` (and `ja`) → repository-wide agent conventions: review levels, severity labels, PR workflow.
 - `docs/en/laravel/AGENTS.md` (and `ja`) → **Laravel-specific rules that take precedence over the general `docs/en/` rules when the target project uses Laravel.** Ignore the `laravel/` directory entirely for non-Laravel projects.
+- `docs/en/testing/AGENTS.md` (and `ja`) → testing rules (unit test / feature test scope, test data policy), applicable regardless of framework.
 
 Read the relevant `AGENTS.md` before editing files in a subtree — it defines the conventions for that subtree.
 
