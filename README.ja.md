@@ -37,6 +37,13 @@
 
 - <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
 
+### テストガイドライン
+
+- [テストコードガイドライン](docs/ja/testing/README.md)
+  - [ユニットテスト](docs/ja/testing/UNIT_TEST.md)
+  - [フィーチャーテスト](docs/ja/testing/FEATURE_TEST.md)
+  - [バリデーションのテスト](docs/ja/testing/VALIDATION.md)
+
 ### フレームワーク別ガイドライン
 
 - [Laravel ガイドライン](docs/ja/laravel/README.md)

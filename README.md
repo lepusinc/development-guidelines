@@ -37,6 +37,13 @@ Pull request templates are maintained in lepusinc/.github to ensure consistency 
 
 - <https://github.com/lepusinc/.github/tree/main/.github/PULL_REQUEST_TEMPLATE>
 
+### Testing Guidelines
+
+- [Testing Guidelines](docs/en/testing/README.md)
+  - [Unit Test](docs/en/testing/UNIT_TEST.md)
+  - [Feature Test](docs/en/testing/FEATURE_TEST.md)
+  - [Validation Testing](docs/en/testing/VALIDATION.md)
+
 ### Framework-specific Guidelines
 
 - [Laravel Guidelines](docs/en/laravel/README.md)
