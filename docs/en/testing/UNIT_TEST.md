@@ -13,6 +13,5 @@
 
 ## Format & Parsing Tests
 
-When testing formats such as CSV or API responses, prepare a Fixture and assert that the output matches it.
-
-When testing parsing, also prepare a Fixture and use it as the input.
+- **[Recommended]** When testing formats such as CSV or API responses, prepare a Fixture and assert that the output matches it.
+- **[Recommended]** When testing parsing, also prepare a Fixture and use it as the input.

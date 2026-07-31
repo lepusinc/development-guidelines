@@ -42,6 +42,7 @@ Pull request templates are maintained in lepusinc/.github to ensure consistency 
 - [Testing Guidelines](docs/en/testing/README.md)
   - [Unit Test](docs/en/testing/UNIT_TEST.md)
   - [Feature Test](docs/en/testing/FEATURE_TEST.md)
+  - [Validation Testing](docs/en/testing/VALIDATION.md)
 
 ### Framework-specific Guidelines
 

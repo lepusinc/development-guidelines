@@ -13,4 +13,4 @@ See the linked documents above for detailed guidelines on each test type.
 
 ## Test Data
 
-For data broadly reused across tests — master data, configuration, user data, etc. — create and reuse a Mother.
+- **[Recommended]** For data broadly reused across tests — master data, configuration, user data, etc. — create and reuse a Mother.

@@ -42,6 +42,7 @@
 - [テストコードガイドライン](docs/ja/testing/README.md)
   - [ユニットテスト](docs/ja/testing/UNIT_TEST.md)
   - [フィーチャーテスト](docs/ja/testing/FEATURE_TEST.md)
+  - [バリデーションのテスト](docs/ja/testing/VALIDATION.md)
 
 ### フレームワーク別ガイドライン
 
