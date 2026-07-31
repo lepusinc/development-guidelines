@@ -13,6 +13,8 @@ All guidelines exist in two parallel trees:
 - `docs/en/` — English, authored **for AI agents** (this is the primary source AI tooling consults).
 - `docs/ja/` — Japanese, authored for human engineers.
 
+AI agents working in a downstream development project that adopts these guidelines only need to read `docs/en/` — `docs/ja/` is for that project's human engineers and is not required agent reading. (This does not apply when editing this guidelines repository itself, where both trees must stay in sync per the rule below.)
+
 This document is available in the following languages:
 
 - [English](docs/en/AGENTS.md)
@@ -27,7 +29,7 @@ When writing bilingual text inline, list English first, then Japanese.
 Each directory level has its own `AGENTS.md` that scopes the rules below it:
 
 - Root `AGENTS.md` → repository-wide agent instructions (repo purpose, bilingual rule, conventions, CI) plus language switcher links to the trees below.
-- `docs/en/AGENTS.md` (and `ja`) → repository-wide agent conventions: review levels, severity labels, PR workflow.
+- `docs/en/AGENTS.md` (and `ja`) → document index, AI agent task delegation & accuracy practices, patterns & conventions, severity labels.
 - `docs/en/laravel/AGENTS.md` (and `ja`) → **Laravel-specific rules that take precedence over the general `docs/en/` rules when the target project uses Laravel.** Ignore the `laravel/` directory entirely for non-Laravel projects.
 - `docs/en/testing/AGENTS.md` (and `ja`) → testing rules (unit test / feature test scope, test data policy), applicable regardless of framework.
 
