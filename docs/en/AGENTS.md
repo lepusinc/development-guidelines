@@ -26,22 +26,22 @@ This repository contains the engineering team's documentation standards, review 
 
 ### 2. AI Agent Task Delegation
 
-- Delegate research to a research subagent.
-- Delegate design to a design subagent.
-- Delegate implementation to an implementation subagent.
-- Delegate writing test code to a test-code subagent.
-- Delegate review to a review subagent.
-- Keep planning (finalizing what to build and getting user buy-in) with the main agent — it requires an interactive back-and-forth with the user that a background subagent cannot conduct.
+- **[Recommended]** Delegate research to a research subagent.
+- **[Recommended]** Delegate design to a design subagent.
+- **[Recommended]** Delegate implementation to an implementation subagent.
+- **[Recommended]** Delegate writing test code to a test-code subagent.
+- **[Recommended]** Delegate review to a review subagent.
+- **[Required]** Keep planning (finalizing what to build and getting user buy-in) with the main agent — it requires an interactive back-and-forth with the user that a background subagent cannot conduct.
 
 ### 3. AI Agent Accuracy Practices
 
-- **Ask instead of guessing**: When a requirement is ambiguous or information is missing, ask the user rather than silently assuming.
-- **Verify against the current codebase**: Before acting on a claim about a function, file, or existing behavior, confirm it against the current code — do not rely on memory or documentation that may be stale.
-- **Use DeepWiki/Devin MCP for spec research**: When researching a repository's current specification, query DeepWiki MCP if the repository is indexed there; for a private repository DeepWiki does not cover, query Devin MCP instead. Also use DeepWiki MCP when researching the specifications of OSS/third-party dependencies.
-- **Adversarially verify review/research findings**: Before reporting a review or research finding as confirmed, challenge it from an independent perspective (e.g., a separate refutation pass) to reduce false positives.
-- **Compare multiple candidates for high-risk (L2) designs**: For L2-level design decisions, produce multiple independent candidate designs and score them before selecting one to implement, rather than committing to a single first draft.
-- **Prefer IDE MCP tools for code edits**: When an IDE (e.g., a JetBrains product) exposes MCP tooling, use it for structural edits such as renames. IDE-driven refactoring updates all call sites automatically, so the agent does not need to manually search for every reference.
-- **Run the code formatter after edits**: In projects with a configured code formatter, run it after editing code.
+- **[Required]** Ask instead of guessing: when a requirement is ambiguous or information is missing, ask the user rather than silently assuming.
+- **[Required]** Verify against the current codebase: before acting on a claim about a function, file, or existing behavior, confirm it against the current code — do not rely on memory or documentation that may be stale.
+- **[Recommended]** Use DeepWiki/Devin MCP for spec research: when researching a repository's current specification, query DeepWiki MCP if the repository is indexed there; for a private repository DeepWiki does not cover, query Devin MCP instead. Also use DeepWiki MCP when researching the specifications of OSS/third-party dependencies.
+- **[Recommended]** Adversarially verify review/research findings: before reporting a review or research finding as confirmed, challenge it from an independent perspective (e.g., a separate refutation pass) to reduce false positives.
+- **[Required]** Compare multiple candidates for high-risk (L2) designs: for L2-level design decisions, produce multiple independent candidate designs and score them before selecting one to implement, rather than committing to a single first draft.
+- **[Recommended]** Prefer IDE MCP tools for code edits: when an IDE (e.g., a JetBrains product) exposes MCP tooling, use it for structural edits such as renames. IDE-driven refactoring updates all call sites automatically, so the agent does not need to manually search for every reference.
+- **[Recommended]** Run the code formatter after edits: in projects with a configured code formatter, run it after editing code.
 
 ### 4. Patterns & Conventions
 
