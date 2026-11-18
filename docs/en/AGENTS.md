@@ -13,6 +13,7 @@ This repository contains the engineering team's documentation standards, review 
 | [Git Workflow Guidelines](./GIT_WORKFLOW.md) | Branch strategy, commit message conventions |
 | [Issues](./ISSUE.md) | Issue types, system impact scope labeling |
 | [Dependencies Guidelines](./DEPENDENCIES_GUIDELINES.md) | Evaluating and selecting third-party packages |
+| [Domain Model (Entities)](./DOMAIN_MODEL.md) | Entity state and lifecycle — state changes only through dedicated methods |
 | [Laravel Guidelines](./laravel/AGENTS.md) | Laravel-specific rules — only when the target project uses Laravel |
 | [Testing Guidelines](./testing/AGENTS.md) | Unit/feature test scope, validation testing responsibility |
 

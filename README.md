@@ -30,6 +30,7 @@ It defines our principles for code review, pull requests, testing, and collabora
   - [Evaluation Process](docs/en/DEPENDENCIES_GUIDELINES.md#6-evaluation-process)
   - [Ongoing Review](docs/en/DEPENDENCIES_GUIDELINES.md#7-ongoing-review)
   - [Exception Rules](docs/en/DEPENDENCIES_GUIDELINES.md#8-exception-rules)
+- [Domain Model (Entities)](docs/en/DOMAIN_MODEL.md)
 
 ### Pull request templates
 
