@@ -22,7 +22,7 @@ This document defines guidelines for designing and implementing Eloquent models 
   - Do not include state-related attributes (statuses such as `status`, results, active flags, timestamps that accompany a state change, etc.) in `$fillable`. They must not be settable via `create()` / `fill()` / `update()`.
   - Removing an attribute from `$fillable` does not prevent assignments like `$model->status = ...`. Do not assign state-related attributes from outside the model (services, controllers, etc.).
   - Accept values that accompany a state change (e.g. `requested_at`) as arguments of the dedicated state-transition method.
-  - When a query builder bulk update (`update()`) changes state-related columns, encapsulate it inside a dedicated method of the model, custom collection, or Builder.
+  - When a query builder bulk update (`update()`) changes state-related columns, encapsulate it inside a dedicated method of the model, custom collection, or Builder. Bulk updates do not fire model events (`updating` / `updated`, etc.), so Observer side effects ([7. Model Events](#7-model-events)) and audit logs are not executed. For state changes that need them, do not use a bulk update; change each model through its dedicated method.
 
 ```php
 // Bad: a service sets the state and its accompanying value directly
