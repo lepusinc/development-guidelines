@@ -36,6 +36,15 @@ class ChildModelBuilder extends Builder
     }
 }
 
+// 子のモデルは、newEloquentBuilder() でその Builder を返す
+class ChildModel extends Model
+{
+    public function newEloquentBuilder($query): ChildModelBuilder
+    {
+        return new ChildModelBuilder($query);
+    }
+}
+
 // 呼び出し側：リレーション越しにメソッドチェーンで呼ぶ
 $children = $parent->children()->active()->get();
 ```

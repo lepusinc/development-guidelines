@@ -36,6 +36,15 @@ class ChildModelBuilder extends Builder
     }
 }
 
+// The child model returns that Builder from newEloquentBuilder()
+class ChildModel extends Model
+{
+    public function newEloquentBuilder($query): ChildModelBuilder
+    {
+        return new ChildModelBuilder($query);
+    }
+}
+
 // Caller: call through the relation with method chaining
 $children = $parent->children()->active()->get();
 ```
