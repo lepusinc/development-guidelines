@@ -11,33 +11,33 @@ This document defines guidelines for designing and implementing Eloquent models 
 - **[Mandatory]** A Builder (and any scopes) must be limited to building queries only for its own table. If queries for related tables are needed, delegate to that table's Builder.
 - **[Required]** Do not define scopes in model classes. Instead, create a dedicated Builder class and define them there.
 - **[Mandatory]** Put query building (conditions, aggregation, ordering, etc.) in a Builder, not in model methods. This applies not only to scopes: do not build queries inside ordinary model methods either.
-- **[Mandatory]** Put a condition in the Builder of the model whose table the condition applies to. Do not write conditions on a child table in the parent model (e.g. conditions on the `transfers` table belong in the `Transfer` Builder, not in the parent `Batch`).
+- **[Mandatory]** Put a condition in the Builder of the model whose table the condition applies to. Do not write conditions on a child table in the parent model (e.g. conditions on the child `children` table belong in the Builder of the child `ChildModel`, not in the parent `ParentModel`).
 - **[Required]** When narrowing down children from a parent, call the Builder methods through the relation with method chaining. Group combined conditions into a Builder method with a meaningful name.
 
 ```php
 // Bad: a method of the parent model builds conditions on the child table
-class Batch extends Model
+class ParentModel extends Model
 {
-    public function notifiableTransfers(): HasMany
+    public function activeChildren(): HasMany
     {
-        return $this->transfers()
-            ->where('result', TransferResult::Completed)
-            ->whereNull('notified_at');
+        return $this->children()
+            ->where('status', ChildStatus::Active)
+            ->whereNull('archived_at');
     }
 }
 
 // Good: conditions on the child table are grouped in the child model's Builder
-class TransferBuilder extends Builder
+class ChildModelBuilder extends Builder
 {
-    public function notifiable(): static
+    public function active(): static
     {
-        return $this->where('result', TransferResult::Completed)
-            ->whereNull('notified_at');
+        return $this->where('status', ChildStatus::Active)
+            ->whereNull('archived_at');
     }
 }
 
 // Caller: call through the relation with method chaining
-$transfers = $batch->transfers()->notifiable()->get();
+$children = $parent->children()->active()->get();
 ```
 
 ## 3. Collections

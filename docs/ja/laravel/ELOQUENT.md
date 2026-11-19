@@ -11,33 +11,33 @@
 - **[厳守]** Builder（およびスコープ）は担当するテーブルのクエリビルドのみに限定する。リレーションしているテーブルへのクエリが必要な場合は、そのテーブルの Builder に委譲する。
 - **[要修正]** モデルクラスにスコープは定義せず、専用の Builder クラスを作成し Builder に定義する。
 - **[厳守]** クエリの組み立て（条件・集計・並び順など）は、モデルのメソッドに書かず、Builder に置く。スコープに限らず、モデルの普通のメソッドの中でもクエリを組み立てない。
-- **[厳守]** 条件は、その条件をかけるテーブルのモデルの Builder に置く。親のモデルに、子のテーブルへの条件を書かない（例：`transfers` テーブルへの条件は、親の `Batch` ではなく `Transfer` の Builder に置く）。
+- **[厳守]** 条件は、その条件をかけるテーブルのモデルの Builder に置く。親のモデルに、子のテーブルへの条件を書かない（例：子の `children` テーブルへの条件は、親の `ParentModel` ではなく、子の `ChildModel` の Builder に置く）。
 - **[要修正]** 親から子を絞り込むときは、リレーション越しにメソッドチェーンで呼ぶ。条件の組み合わせは、意味のある名前の Builder のメソッドにまとめる。
 
 ```php
 // 悪い例：親のモデルのメソッドで、子のテーブルへの条件を組み立てている
-class Batch extends Model
+class ParentModel extends Model
 {
-    public function notifiableTransfers(): HasMany
+    public function activeChildren(): HasMany
     {
-        return $this->transfers()
-            ->where('result', TransferResult::Completed)
-            ->whereNull('notified_at');
+        return $this->children()
+            ->where('status', ChildStatus::Active)
+            ->whereNull('archived_at');
     }
 }
 
 // 良い例：子のテーブルへの条件は、子のモデルの Builder にまとめる
-class TransferBuilder extends Builder
+class ChildModelBuilder extends Builder
 {
-    public function notifiable(): static
+    public function active(): static
     {
-        return $this->where('result', TransferResult::Completed)
-            ->whereNull('notified_at');
+        return $this->where('status', ChildStatus::Active)
+            ->whereNull('archived_at');
     }
 }
 
 // 呼び出し側：リレーション越しにメソッドチェーンで呼ぶ
-$transfers = $batch->transfers()->notifiable()->get();
+$children = $parent->children()->active()->get();
 ```
 
 ## 3. コレクション
