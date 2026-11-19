@@ -30,6 +30,7 @@
   - [選定プロセス](docs/ja/DEPENDENCIES_GUIDELINES.md#6-選定プロセスevaluation-process)
   - [継続的チェック](docs/ja/DEPENDENCIES_GUIDELINES.md#7-継続的チェックongoing-review)
   - [例外ルール](docs/ja/DEPENDENCIES_GUIDELINES.md#8-例外ルールexception-rules)
+- [ドメインモデル（エンティティ）](docs/ja/DOMAIN_MODEL.md)
 
 ### プルリクエストテンプレート
 

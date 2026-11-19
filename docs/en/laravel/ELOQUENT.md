@@ -18,7 +18,21 @@ This document defines guidelines for designing and implementing Eloquent models 
 ## 4. Responsibility & Design
 
 - **[Mandatory]** Using service classes in models or custom collections is strictly prohibited. It violates the boundaries of the ORM layer.
-- **[Mandatory]** Stateful values on a model must not be settable directly from outside. Define dedicated methods for state transitions.
+- **[Mandatory]** Stateful values on a model must not be settable directly from outside. Define dedicated methods for state transitions. The general principle is in [Domain Model (Entities)](../DOMAIN_MODEL.md). In Eloquent, apply it as follows.
+  - Do not include state-related attributes (statuses such as `status`, results, active flags, timestamps that accompany a state change, etc.) in `$fillable`. They must not be settable via `create()` / `fill()` / `update()`.
+  - Removing an attribute from `$fillable` does not prevent assignments like `$model->status = ...`. Do not assign state-related attributes from outside the model (services, controllers, etc.).
+  - Accept values that accompany a state change (e.g. `requested_at`) as arguments of the dedicated state-transition method.
+  - When a query builder bulk update (`update()`) changes state-related columns, encapsulate it inside a dedicated method of the model, custom collection, or Builder. Bulk updates do not fire model events (`updating` / `updated`, etc.), so Observer side effects ([7. Model Events](#7-model-events)) and audit logs are not executed. For state changes that need them, do not use a bulk update; change each model through its dedicated method.
+
+```php
+// Bad: a service sets the state and its accompanying value directly
+$batch->status = BatchStatus::InProgress;
+$batch->requested_at = now();
+$batch->save();
+
+// Good: the model's dedicated method checks the transition and records the accompanying value
+$batch->markRequested(now());
+```
 
 ## 5. Security
 
