@@ -49,7 +49,7 @@ class ChildModel extends Model
 $children = $parent->children()->active()->get();
 ```
 
-- **[Required]** As a rule, define a condition or an ordering as a method on the Builder of the model whose table it applies to, and use that method. However, if a scope with the same meaning is already defined on the model, use that scope (do not define the same condition again on the Builder). This is an exception to "Do not define scopes in model classes": it only allows using a scope that already exists, and does not allow adding a new condition to the model as a scope. In either case, do not rewrite the same condition with `where()` or `orderBy()`. The same applies inside `whereHas()` and similar closures: use the related model's Builder methods (or scopes).
+- **[Required]** As a rule, define a condition or an ordering as a method on the Builder of the model whose table it applies to, and use that method. However, if the model already uses scopes, as an exception to "Do not define scopes in model classes", use its existing scopes and you may also define new conditions as scopes. Consider migrating to a custom Builder as a refactoring. In either case, do not rewrite a condition with the same meaning as an existing one (a Builder method or a scope) with `where()` or `orderBy()`, and do not define it again elsewhere. The same applies inside `whereHas()` and similar closures: use the related model's Builder methods (or scopes).
 
 ```php
 // Bad: conditions that already exist as a scope or a Builder method are rewritten with where()
