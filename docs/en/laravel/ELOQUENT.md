@@ -10,8 +10,8 @@ This document defines guidelines for designing and implementing Eloquent models 
 
 - **[Mandatory]** A Builder (and any scopes) must be limited to building queries only for its own table. If queries for related tables are needed, delegate to that table's Builder.
 - **[Required]** Do not define scopes in model classes. Instead, create a dedicated Builder class and define them there.
-- **[Mandatory]** Put query building (conditions, aggregation, ordering, etc.) in a Builder, not in model methods. This applies not only to scopes: do not build queries inside ordinary model methods either.
-- **[Mandatory]** Put a condition in the Builder of the model whose table the condition applies to. Do not write conditions on a child table in the parent model (e.g. conditions on the child `children` table belong in the Builder of the child `ChildModel`, not in the parent `ParentModel`).
+- **[Mandatory]** Put query building (conditions, aggregation, ordering, etc.) in a Builder, not in model methods. This applies not only to scopes: do not build queries inside ordinary model methods either. However, a model that already uses scopes may define conditions and orderings on its own table as scopes (see the last rule in this section).
+- **[Mandatory]** Put a condition in the Builder of the model whose table the condition applies to (for a model that already uses scopes, its scopes are also allowed). Do not write conditions on a child table in the parent model (e.g. conditions on the child `children` table belong in the Builder of the child `ChildModel`, not in the parent `ParentModel`).
 - **[Required]** When narrowing down children from a parent, call the Builder methods through the relation with method chaining. Group combined conditions into a Builder method with a meaningful name.
 
 ```php
