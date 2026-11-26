@@ -49,6 +49,23 @@ class ChildModel extends Model
 $children = $parent->children()->active()->get();
 ```
 
+- **[Required]** As a rule, define a condition or an ordering as a method on the Builder of the model whose table it applies to, and use that method. However, if a scope with the same meaning is already defined on the model, use that scope (do not define the same condition again on the Builder). In either case, do not rewrite the same condition with `where()` or `orderBy()`. The same applies inside `whereHas()` and similar closures: use the related model's Builder methods (or scopes).
+
+```php
+// Bad: conditions that already exist as a scope or a Builder method are rewritten with where()
+ParentModel::query()
+    ->where('status', ParentStatus::Active)
+    ->whereHas('children', fn ($query) => $query
+        ->where('status', ChildStatus::Active)
+        ->whereNull('archived_at'));
+
+// Good: use the scope already defined on ParentModel (scopeActive()) and
+// the method on ChildModel's Builder (active())
+ParentModel::query()
+    ->active()
+    ->whereHas('children', fn ($query) => $query->active());
+```
+
 ## 3. Collections
 
 - **[Required]** When implementing custom logic that involves multiple models, create a custom collection and implement the logic there. This is limited to logic that can be fully contained within the collection's models (delegation to other service classes is not allowed; delegation to related models or Eloquent collections is acceptable).

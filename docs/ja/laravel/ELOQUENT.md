@@ -49,6 +49,23 @@ class ChildModel extends Model
 $children = $parent->children()->active()->get();
 ```
 
+- **[要修正]** 条件や並び順は、原則として、その条件をかけるテーブルのモデルの Builder にメソッドとして定義して使う。ただし、同じ意味のスコープがすでにモデルに定義されている場合は、そのスコープを使う（Builder に同じ条件を定義し直さない）。どちらの場合も、同じ条件を `where()` や `orderBy()` で書き直さない。`whereHas()` などのクロージャの中でも同じで、関係先のモデルの Builder のメソッド（またはスコープ）を使う。
+
+```php
+// 悪い例：スコープや Builder のメソッドがある条件を、where() で書き直している
+ParentModel::query()
+    ->where('status', ParentStatus::Active)
+    ->whereHas('children', fn ($query) => $query
+        ->where('status', ChildStatus::Active)
+        ->whereNull('archived_at'));
+
+// 良い例：ParentModel にすでに定義されているスコープ（scopeActive()）と、
+// ChildModel の Builder のメソッド（active()）を使う
+ParentModel::query()
+    ->active()
+    ->whereHas('children', fn ($query) => $query->active());
+```
+
 ## 3. コレクション
 
 - **[要修正]** 複数のモデルを使う独自処理を実装する場合、独自コレクションを作成し独自コレクションに実装する。ただし、コレクション内のモデルだけで完結する処理領域に限る（他のサービスクラスなどへの委譲は含めてはいけない。リレーション定義しているモデルや Eloquent コレクションへの委譲は可）。
